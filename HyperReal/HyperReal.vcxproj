@@ -57,6 +57,8 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>HR_PLATFORM_WINDOWS;HR_BUILD_DLL;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)HyperReal\thirdparty\spdlog\include;</AdditionalIncludeDirectories>
+      <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -71,6 +73,8 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>HR_PLATFORM_WINDOWS;HR_BUILD_DLL;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)HyperReal\thirdparty\spdlog\include;</AdditionalIncludeDirectories>
+      <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -80,12 +84,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\core-files\Log.h" />
     <ClInclude Include="src\core-files\Application.h" />
     <ClInclude Include="src\core-files\core.h" />
     <ClInclude Include="src\core-files\entrypoint.h" />
     <ClInclude Include="src\HyperReal.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\core-files\Log.cpp" />
     <ClCompile Include="src\core-files\Application.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

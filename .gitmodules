@@ -1,0 +1,3 @@
+[submodule "HyperReal/thirdparty/spdlog"]
+	path = HyperReal/thirdparty/spdlog
+	url = https://github.com/gabime/spdlog.git
