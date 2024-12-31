@@ -3,6 +3,8 @@
 #include "core.h"
 #include "spdlog/spdlog.h"
 #include "spdlog/fmt/ostr.h"
+#include "spdlog/fmt/bundled/format.h"
+
 namespace HyperR {
 	class HyperR_API Log
 	{

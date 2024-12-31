@@ -14,7 +14,6 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 project "HyperReal"
 	location "HyperReal"
 	kind "SharedLib"
-
 	language "C++"
 	
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
@@ -27,7 +26,8 @@ project "HyperReal"
 	}
 	includedirs
 	{
-		"%{prj.name}/thirdparty/spdlog/include"
+		"%{prj.name}/src",
+		"%{prj.name}/thirdparty/spdlog/include",
 	}
 
 	filter "system:windows"
@@ -45,8 +45,6 @@ project "HyperReal"
 			("{COPYDIR} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/Sandbox")
 		}
 
-
-
 	filter "configurations:Debug"
 		defines "HR_DEBUG"
 		symbols "On"
@@ -56,7 +54,6 @@ project "HyperReal"
 	filter "configurations:Dist"
 		defines "HR_DIST"
 		optimize "On"
-
 
 project "Sandbox"
 	location "Sandbox"
@@ -72,12 +69,13 @@ project "Sandbox"
 	includedirs
 	{
 		"HyperReal/thirdparty/spdlog/include",
-		"HyperReal/src"
+		"HyperReal/src",
 	}
-	links
+	links	
 	{
-		"HyperReal"
+		"HyperReal",
 	}
+
 	filter "system:windows"
 		cppdialect "C++17"
 		staticruntime "On"

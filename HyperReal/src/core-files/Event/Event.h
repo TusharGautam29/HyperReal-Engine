@@ -1,7 +1,6 @@
 #pragma once
 
 #include "C:\HyperReal\HyperReal\HyperReal\src\core-files\core.h"
-#include "spdlog/fmt/ostr.h"
 
 #include <string>
 #include <functional>
@@ -74,8 +73,9 @@ namespace HyperR {
 		Event& m_Event;
 	};
 
-	inline std::string format_as(const Event& e) {
-		return e.ToString();
+	inline std::ostream& operator<<(std::ostream& os, const Event& e)
+	{
+		return os << e.ToString();
 	}
 }
 

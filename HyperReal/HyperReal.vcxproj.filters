@@ -4,11 +4,26 @@
     <Filter Include="core-files">
       <UniqueIdentifier>{2E172D4C-1ACF-6E99-83D6-47F56FAD098A}</UniqueIdentifier>
     </Filter>
+    <Filter Include="core-files\Event">
+      <UniqueIdentifier>{FFC21EBD-EBBB-3D0F-14EE-229400461D1B}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\HyperReal.h" />
     <ClInclude Include="src\core-files\Application.h">
       <Filter>core-files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\core-files\Event\ApplicationEvent.h">
+      <Filter>core-files\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="src\core-files\Event\Event.h">
+      <Filter>core-files\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="src\core-files\Event\KeyEvent.h">
+      <Filter>core-files\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="src\core-files\Event\MouseEvent.h">
+      <Filter>core-files\Event</Filter>
     </ClInclude>
     <ClInclude Include="src\core-files\Log.h">
       <Filter>core-files</Filter>

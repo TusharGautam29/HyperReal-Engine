@@ -1,3 +1,6 @@
 [submodule "HyperReal/thirdparty/spdlog"]
 	path = HyperReal/thirdparty/spdlog
 	url = https://github.com/gabime/spdlog.git
+[submodule "HyperReal/thirdparty/fmt"]
+	path = HyperReal/thirdparty/fmt
+	url = https://github.com/fmtlib/fmt.git
