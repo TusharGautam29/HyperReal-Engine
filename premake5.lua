@@ -19,6 +19,9 @@ project "HyperReal"
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
 
+	pchheader "hrpch.h"
+	pchsource "HyperReal/src/hrpch.cpp"
+
 	files
 	{
 		"%{prj.name}/src/**.h",

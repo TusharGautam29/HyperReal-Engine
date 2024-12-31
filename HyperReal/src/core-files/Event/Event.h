@@ -1,9 +1,7 @@
 #pragma once
-
+#include "hrpch.h"
 #include "C:\HyperReal\HyperReal\HyperReal\src\core-files\core.h"
 
-#include <string>
-#include <functional>
 
 namespace HyperR {
 

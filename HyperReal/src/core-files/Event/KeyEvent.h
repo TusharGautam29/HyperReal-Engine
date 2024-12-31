@@ -2,8 +2,6 @@
 
 #include "Event.h"
 
-#include <sstream>
-
 namespace HyperR {
 
 	class HyperR_API KeyEvent : public Event
