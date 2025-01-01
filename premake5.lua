@@ -12,9 +12,9 @@ workspace "HyperReal"
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 IncludeDir={}
-IncludeDir["glfw"]="HyperReal/thirdparty/glfw/include"
+IncludeDir["GLFW"]="HyperReal/thirdparty/GLFW/include"
 
-include "HyperReal/thirdparty/glfw"
+include "HyperReal/thirdparty/GLFW"
 
 
 
@@ -38,7 +38,7 @@ project "HyperReal"
 	{
 		"%{prj.name}/src",
 		"%{prj.name}/thirdparty/spdlog/include",
-		"%{IncludeDir.glfw}"
+		"%{IncludeDir.GLFW}"
 	}
 	links 
 	{ 

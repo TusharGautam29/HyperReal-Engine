@@ -35,6 +35,8 @@
       <Filter>core-files</Filter>
     </ClInclude>
     <ClInclude Include="src\hrpch.h" />
+    <ClInclude Include="src\core-files\Platform\Windows\WindowsWindow.h" />
+    <ClInclude Include="src\core-files\Window.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\core-files\Application.cpp">
@@ -44,5 +46,6 @@
       <Filter>core-files</Filter>
     </ClCompile>
     <ClCompile Include="src\hrpch.cpp" />
+    <ClCompile Include="src\core-files\Platform\Windows\WindowsWindow.cpp" />
   </ItemGroup>
 </Project>
