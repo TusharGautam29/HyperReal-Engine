@@ -11,6 +11,13 @@ workspace "HyperReal"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
+IncludeDir={}
+IncludeDir["glfw"]="HyperReal/thirdparty/glfw/include"
+
+include "HyperReal/thirdparty/glfw"
+
+
+
 project "HyperReal"
 	location "HyperReal"
 	kind "SharedLib"
@@ -31,6 +38,12 @@ project "HyperReal"
 	{
 		"%{prj.name}/src",
 		"%{prj.name}/thirdparty/spdlog/include",
+		"%{IncludeDir.glfw}"
+	}
+	links 
+	{ 
+		"GLFW",
+		"opengl32.lib"
 	}
 
 	filter "system:windows"
@@ -82,7 +95,7 @@ project "Sandbox"
 	filter "system:windows"
 		cppdialect "C++17"
 		staticruntime "On"
-		systemversion "10.0.17134.0"
+		systemversion "10.0.19041.0"
 		defines
 		{
 			"HR_PLATFORM_WINDOWS"

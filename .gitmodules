@@ -4,6 +4,7 @@
 [submodule "HyperReal/thirdparty/fmt"]
 	path = HyperReal/thirdparty/fmt
 	url = https://github.com/fmtlib/fmt.git
+
 [submodule "HyperReal/thirdparty/GLFW"]
 	path = HyperReal/thirdparty/GLFW
 	url = https://github.com/TheCherno/glfw
