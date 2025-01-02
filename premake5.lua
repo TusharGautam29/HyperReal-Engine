@@ -13,8 +13,10 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 IncludeDir={}
 IncludeDir["GLFW"]="HyperReal/thirdparty/GLFW/include"
+IncludeDir["Glad"]="HyperReal/thirdparty/Glad/include"
 
 include "HyperReal/thirdparty/GLFW"
+include "HyperReal/thirdparty/Glad"
 
 
 
@@ -38,11 +40,14 @@ project "HyperReal"
 	{
 		"%{prj.name}/src",
 		"%{prj.name}/thirdparty/spdlog/include",
-		"%{IncludeDir.GLFW}"
+		"%{IncludeDir.GLFW}",
+		"%{IncludeDir.Glad}"
 	}
 	links 
 	{ 
-		"GLFW",
+		"GLFW",	
+		"GLFW",	
+		"Glad",
 		"opengl32.lib"
 	}
 
@@ -54,6 +59,7 @@ project "HyperReal"
 		{
 			"HR_PLATFORM_WINDOWS",
 			"HR_BUILD_DLL"
+			"GLFW_INCLUDE_NONE"
 		}
 
 		postbuildcommands

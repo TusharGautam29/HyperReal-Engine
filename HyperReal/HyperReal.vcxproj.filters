@@ -7,6 +7,12 @@
     <Filter Include="core-files\Event">
       <UniqueIdentifier>{FFC21EBD-EBBB-3D0F-14EE-229400461D1B}</UniqueIdentifier>
     </Filter>
+    <Filter Include="core-files\Platform">
+      <UniqueIdentifier>{42476B97-AEA8-48A5-3716-8F57A3767F64}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core-files\Platform\Windows">
+      <UniqueIdentifier>{7C13E5E3-E820-13CA-7107-0FB5DD13DF80}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\HyperReal.h" />
@@ -25,7 +31,19 @@
     <ClInclude Include="src\core-files\Event\MouseEvent.h">
       <Filter>core-files\Event</Filter>
     </ClInclude>
+    <ClInclude Include="src\core-files\Layer.h">
+      <Filter>core-files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\core-files\LayerStack.h">
+      <Filter>core-files</Filter>
+    </ClInclude>
     <ClInclude Include="src\core-files\Log.h">
+      <Filter>core-files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\core-files\Platform\Windows\WindowsWindow.h">
+      <Filter>core-files\Platform\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="src\core-files\Window.h">
       <Filter>core-files</Filter>
     </ClInclude>
     <ClInclude Include="src\core-files\core.h">
@@ -35,21 +53,23 @@
       <Filter>core-files</Filter>
     </ClInclude>
     <ClInclude Include="src\hrpch.h" />
-    <ClInclude Include="src\core-files\Platform\Windows\WindowsWindow.h" />
-    <ClInclude Include="src\core-files\Window.h" />
-    <ClInclude Include="src\core-files\Layer.h" />
-    <ClInclude Include="src\core-files\LayerStack.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\core-files\Application.cpp">
       <Filter>core-files</Filter>
     </ClCompile>
+    <ClCompile Include="src\core-files\Layer.cpp">
+      <Filter>core-files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core-files\LayerStack.cpp">
+      <Filter>core-files</Filter>
+    </ClCompile>
     <ClCompile Include="src\core-files\Log.cpp">
       <Filter>core-files</Filter>
     </ClCompile>
+    <ClCompile Include="src\core-files\Platform\Windows\WindowsWindow.cpp">
+      <Filter>core-files\Platform\Windows</Filter>
+    </ClCompile>
     <ClCompile Include="src\hrpch.cpp" />
-    <ClCompile Include="src\core-files\Platform\Windows\WindowsWindow.cpp" />
-    <ClCompile Include="src\core-files\Layer.cpp" />
-    <ClCompile Include="src\core-files\LayerStack.cpp" />
   </ItemGroup>
 </Project>

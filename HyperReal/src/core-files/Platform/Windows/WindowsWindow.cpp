@@ -1,8 +1,10 @@
 #include "hrpch.h"
+#include <glad/glad.h>
 #include "WindowsWindow.h"
 #include "core-files/Event/ApplicationEvent.h"
 #include "core-files/Event/MouseEvent.h"
 #include "core-files/Event/KeyEvent.h"
+
 namespace HyperR {
 	
 	static void GLFWErrorCallback(int error, const char* description)
@@ -39,6 +41,8 @@ namespace HyperR {
 		}
 		m_Window = glfwCreateWindow((int)props.Width, (int)props.Height, m_Data.Title.c_str(), nullptr, nullptr);
 		glfwMakeContextCurrent(m_Window);
+		int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
+		HR_CORE_ASSERT(status, "Failed to initialize Glad!");
 		glfwSetWindowUserPointer(m_Window, &m_Data);
 		SetVSync(true);
 		

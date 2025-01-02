@@ -80,9 +80,11 @@
       <PrecompiledHeaderFile>hrpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>HR_PLATFORM_WINDOWS;HR_BUILD_DLL;HR_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;thirdparty\spdlog\include;thirdparty\glfw\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;thirdparty\spdlog\include;thirdparty\GLFW\include;thirdparty\Glad\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <AdditionalOptions>/MDd %(AdditionalOptions)</AdditionalOptions>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
@@ -102,12 +104,14 @@
       <PrecompiledHeaderFile>hrpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>HR_PLATFORM_WINDOWS;HR_BUILD_DLL;HR_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;thirdparty\spdlog\include;thirdparty\glfw\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;thirdparty\spdlog\include;thirdparty\GLFW\include;thirdparty\Glad\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <MinimalRebuild>false</MinimalRebuild>
       <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <AdditionalOptions>/MD %(AdditionalOptions)</AdditionalOptions>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
@@ -128,12 +132,14 @@
       <PrecompiledHeaderFile>hrpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>HR_PLATFORM_WINDOWS;HR_BUILD_DLL;HR_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;thirdparty\spdlog\include;thirdparty\glfw\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;thirdparty\spdlog\include;thirdparty\GLFW\include;thirdparty\Glad\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <MinimalRebuild>false</MinimalRebuild>
       <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <AdditionalOptions>/MD %(AdditionalOptions)</AdditionalOptions>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
@@ -149,34 +155,37 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="src\core-files\LayerStack.h" />
-    <ClInclude Include="src\core-files\Layer.h" />
-    <ClInclude Include="src\core-files\Window.h" />
     <ClInclude Include="src\HyperReal.h" />
     <ClInclude Include="src\core-files\Application.h" />
     <ClInclude Include="src\core-files\Event\ApplicationEvent.h" />
     <ClInclude Include="src\core-files\Event\Event.h" />
     <ClInclude Include="src\core-files\Event\KeyEvent.h" />
     <ClInclude Include="src\core-files\Event\MouseEvent.h" />
+    <ClInclude Include="src\core-files\Layer.h" />
+    <ClInclude Include="src\core-files\LayerStack.h" />
     <ClInclude Include="src\core-files\Log.h" />
+    <ClInclude Include="src\core-files\Platform\Windows\WindowsWindow.h" />
+    <ClInclude Include="src\core-files\Window.h" />
     <ClInclude Include="src\core-files\core.h" />
     <ClInclude Include="src\core-files\entrypoint.h" />
     <ClInclude Include="src\hrpch.h" />
-    <ClInclude Include="src\core-files\Platform\Windows\WindowsWindow.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\core-files\LayerStack.cpp" />
-    <ClCompile Include="src\core-files\Layer.cpp" />
     <ClCompile Include="src\core-files\Application.cpp" />
+    <ClCompile Include="src\core-files\Layer.cpp" />
+    <ClCompile Include="src\core-files\LayerStack.cpp" />
     <ClCompile Include="src\core-files\Log.cpp" />
+    <ClCompile Include="src\core-files\Platform\Windows\WindowsWindow.cpp" />
     <ClCompile Include="src\hrpch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="src\core-files\Platform\Windows\WindowsWindow.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="thirdparty\glfw\GLFW.vcxproj">
+    <ProjectReference Include="thirdparty\GLFW\GLFW.vcxproj">
       <Project>{154B857C-0182-860D-AA6E-6C109684020F}</Project>
+    </ProjectReference>
+    <ProjectReference Include="thirdparty\Glad\Glad.vcxproj">
+      <Project>{BDD6857C-A90D-870D-52FA-6C103E10030F}</Project>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
