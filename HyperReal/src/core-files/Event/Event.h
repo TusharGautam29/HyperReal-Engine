@@ -1,6 +1,7 @@
 #pragma once
 #include "hrpch.h"
 #include "C:\HyperReal\HyperReal\HyperReal\src\core-files\core.h"
+#include "spdlog/fmt/ostr.h"
 
 
 namespace HyperR {
@@ -75,5 +76,25 @@ namespace HyperR {
 	{
 		return os << e.ToString();
 	}
+	// Specialize fmt::formatter for Event types outside the HyperR namespace
+	template<typename T>
+	struct fmt::formatter<
+		T, std::enable_if_t<std::is_base_of<HyperR::Event, T>::value, char>>
+		: fmt::formatter<std::string>
+	{
+		auto format(const T& event, fmt::format_context& ctx) const
+		{
+			return fmt::format_to(ctx.out(), "{}", event.ToString());
+		}
+	};
+
+	// Utility function for formatting strings with arguments
+	template <typename... T>
+	std::string StringFromArgs(fmt::format_string<T...> fmt, T&&... args)
+	{
+		return fmt::format(fmt, std::forward<T>(args)...);
+	}
 }
+
+
 
