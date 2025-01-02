@@ -37,6 +37,8 @@
     <ClInclude Include="src\hrpch.h" />
     <ClInclude Include="src\core-files\Platform\Windows\WindowsWindow.h" />
     <ClInclude Include="src\core-files\Window.h" />
+    <ClInclude Include="src\core-files\Layer.h" />
+    <ClInclude Include="src\core-files\LayerStack.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\core-files\Application.cpp">
@@ -47,5 +49,7 @@
     </ClCompile>
     <ClCompile Include="src\hrpch.cpp" />
     <ClCompile Include="src\core-files\Platform\Windows\WindowsWindow.cpp" />
+    <ClCompile Include="src\core-files\Layer.cpp" />
+    <ClCompile Include="src\core-files\LayerStack.cpp" />
   </ItemGroup>
 </Project>
