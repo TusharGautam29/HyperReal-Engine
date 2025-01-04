@@ -1,4 +1,5 @@
 #include <HyperReal.h>
+#include <core-files/ImGui/ImGuiLayer.h>
 
 class ExampleLayer : public HyperR::Layer
 {
@@ -23,6 +24,7 @@ public:
 	sandbox()
 	{
 		PushLayer(new ExampleLayer());
+		PushOverlay(new HyperR::ImGuiLayer());
 	}
 	~sandbox()
 	{
