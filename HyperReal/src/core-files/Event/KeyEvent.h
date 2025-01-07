@@ -52,4 +52,21 @@ namespace HyperR {
 
 		EVENT_CLASS_TYPE(KeyReleased)
 	};
+
+	class HyperR_API KeyTypedEvent : public KeyEvent
+	{
+	public:
+		KeyTypedEvent(int keycode)
+			: KeyEvent(keycode) {}
+
+
+		std::string ToString() const override
+		{
+			std::stringstream ss;
+			ss << "Keytyped event:" << m_KeyCode;
+			return ss.str();
+		}
+		EVENT_CLASS_TYPE(KeyTyped)
+
+	};
 }
