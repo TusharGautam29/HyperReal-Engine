@@ -16,10 +16,12 @@ IncludeDir["GLFW"]="HyperReal/thirdparty/GLFW/include"
 IncludeDir["Glad"]="HyperReal/thirdparty/Glad/include"
 IncludeDir["ImGui"]="HyperReal/thirdparty/imgui"
 
-include "HyperReal/thirdparty/GLFW"
-include "HyperReal/thirdparty/Glad"
-include "HyperReal/thirdparty/imgui"
+group "Dependencies"
+	include "HyperReal/thirdparty/GLFW"
+	include "HyperReal/thirdparty/Glad"
+	include "HyperReal/thirdparty/imgui"
 
+group ""
 
 project "HyperReal"
 	location "HyperReal"
