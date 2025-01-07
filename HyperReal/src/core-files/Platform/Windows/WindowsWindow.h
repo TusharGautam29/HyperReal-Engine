@@ -23,6 +23,8 @@ namespace HyperR {
 		
 		
 		bool IsVSync() const override;
+
+		virtual void* GetNativeWindow() const override { return m_Window; };
 	
 	private:
 		

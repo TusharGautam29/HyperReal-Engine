@@ -152,6 +152,7 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\core-files\input.h" />
     <ClInclude Include="src\HyperReal.h" />
     <ClInclude Include="src\core-files\Application.h" />
     <ClInclude Include="src\core-files\Event\ApplicationEvent.h" />
@@ -168,6 +169,7 @@
     <ClInclude Include="src\core-files\core.h" />
     <ClInclude Include="src\core-files\entrypoint.h" />
     <ClInclude Include="src\hrpch.h" />
+    <ClInclude Include="src\core-files\Platform\Windows\WindowsInput.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\core-files\Application.cpp" />
@@ -180,6 +182,7 @@
     <ClCompile Include="src\hrpch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="src\core-files\Platform\Windows\WindowsInput.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="thirdparty\GLFW\GLFW.vcxproj">

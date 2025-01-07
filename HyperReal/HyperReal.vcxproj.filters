@@ -65,6 +65,8 @@
       <Filter>core-files</Filter>
     </ClInclude>
     <ClInclude Include="src\hrpch.h" />
+    <ClInclude Include="src\core-files\input.h" />
+    <ClInclude Include="src\core-files\Platform\Windows\WindowsInput.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\core-files\Application.cpp">
@@ -89,5 +91,6 @@
       <Filter>core-files\Platform\Windows</Filter>
     </ClCompile>
     <ClCompile Include="src\hrpch.cpp" />
+    <ClCompile Include="src\core-files\Platform\Windows\WindowsInput.cpp" />
   </ItemGroup>
 </Project>
