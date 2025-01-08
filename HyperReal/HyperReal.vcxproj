@@ -153,6 +153,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="src\core-files\input.h" />
+    <ClInclude Include="src\core-files\Keycodes.h" />
+    <ClInclude Include="src\core-files\MouseButtoncodes.h" />
     <ClInclude Include="src\HyperReal.h" />
     <ClInclude Include="src\core-files\Application.h" />
     <ClInclude Include="src\core-files\Event\ApplicationEvent.h" />
