@@ -15,6 +15,8 @@ IncludeDir={}
 IncludeDir["GLFW"]="HyperReal/thirdparty/GLFW/include"
 IncludeDir["Glad"]="HyperReal/thirdparty/Glad/include"
 IncludeDir["ImGui"]="HyperReal/thirdparty/imgui"
+IncludeDir["glm"]="HyperReal/thirdparty/glm"
+
 
 group "Dependencies"
 	include "HyperReal/thirdparty/GLFW"
@@ -38,7 +40,10 @@ project "HyperReal"
 	files
 	{
 		"%{prj.name}/src/**.h",
-		"%{prj.name}/src/**.cpp"
+		"%{prj.name}/src/**.cpp",
+		"%{prj.name}/thirdparty/glm/glm/**.hpp",
+		"%{prj.name}/thirdparty/glm/glm/**.inl"
+
 	}
 	includedirs
 	{
@@ -46,7 +51,8 @@ project "HyperReal"
 		"%{prj.name}/thirdparty/spdlog/include",
 		"%{IncludeDir.GLFW}",
 		"%{IncludeDir.Glad}",
-		"%{IncludeDir.ImGui}"
+		"%{IncludeDir.ImGui}",
+		"%{IncludeDir.glm}"
 	}
 	links 
 	{ 
@@ -101,6 +107,7 @@ project "Sandbox"
 	{
 		"HyperReal/thirdparty/spdlog/include",
 		"HyperReal/src",
+		"%{IncludeDir.glm}"
 	}
 	links	
 	{

@@ -11,3 +11,6 @@
 [submodule "HyperReal/thirdparty/imgui"]
 	path = HyperReal/thirdparty/imgui
 	url = https://github.com/TusharGautam29/imgui
+[submodule "HyperReal/thirdparty/glm"]
+	path = HyperReal/thirdparty/glm
+	url = https://github.com/g-truc/glm.git
