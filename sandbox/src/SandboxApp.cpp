@@ -1,4 +1,5 @@
 #include <HyperReal.h>
+#include "C:\HyperReal\HyperReal\HyperReal\thirdparty\imgui\imgui.h"
 #include <core-files/ImGui/ImGuiLayer.h>
 #include <glm/vec3.hpp> // glm::vec3
 #include <glm/vec4.hpp> // glm::vec4
@@ -33,6 +34,12 @@ public:
 			HR_INFO("Tab key is pressed");
 		}
 	}
+	virtual void OnImGuiRender() override
+	{
+		ImGui::Begin("Test");
+		ImGui::Text("Hello World");
+		ImGui::End();
+	}
 	void OnEvent(HyperR::Event& event) override
 	{
 		//HR_TRACE("{0}", event);
@@ -51,7 +58,6 @@ public:
 	sandbox()
 	{
 		PushLayer(new ExampleLayer());
-		PushOverlay(new HyperR::ImGuiLayer());
 	}
 	~sandbox()
 	{
