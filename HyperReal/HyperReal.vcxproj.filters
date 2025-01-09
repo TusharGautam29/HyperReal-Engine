@@ -81,9 +81,6 @@
     <ClInclude Include="src\core-files\MouseButtoncodes.h">
       <Filter>src\core-files</Filter>
     </ClInclude>
-    <ClInclude Include="src\core-files\Platform\OpenGL\ImGuiOpenGLRenderer.h">
-      <Filter>src\core-files\Platform\OpenGL</Filter>
-    </ClInclude>
     <ClInclude Include="src\core-files\Platform\Windows\WindowsInput.h">
       <Filter>src\core-files\Platform\Windows</Filter>
     </ClInclude>
@@ -1353,6 +1350,7 @@
     <ClInclude Include="thirdparty\glm\glm\vector_relational.hpp">
       <Filter>thirdparty\glm\glm</Filter>
     </ClInclude>
+    <ClInclude Include="src\core-files\ImGui\ImGuiBuild.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\core-files\Application.cpp">
@@ -1369,9 +1367,6 @@
     </ClCompile>
     <ClCompile Include="src\core-files\Log.cpp">
       <Filter>src\core-files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\core-files\Platform\OpenGL\ImGuiOpenGLRenderer.cpp">
-      <Filter>src\core-files\Platform\OpenGL</Filter>
     </ClCompile>
     <ClCompile Include="src\core-files\Platform\Windows\WindowsInput.cpp">
       <Filter>src\core-files\Platform\Windows</Filter>

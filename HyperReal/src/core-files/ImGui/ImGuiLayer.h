@@ -4,8 +4,8 @@
 #include "core-files/Event/MouseEvent.h"
 #include "core-files/Event/KeyEvent.h"
 
-#include "backends/imgui_impl_opengl3.cpp"
-#include "backends/imgui_impl_glfw.cpp"
+#include "C:\HyperReal\HyperReal\HyperReal\thirdparty\imgui\backends\imgui_impl_opengl3.cpp"
+#include "C:\HyperReal\HyperReal\HyperReal\thirdparty\imgui\backends\imgui_impl_glfw.cpp"
 
 
 namespace HyperR {
