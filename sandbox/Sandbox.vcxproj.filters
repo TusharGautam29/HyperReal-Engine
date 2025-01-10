@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="HyperReal">
+      <UniqueIdentifier>{51288B01-BD92-3F78-06D1-F01D727A1DCD}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="HyperReal\thirdparty">
+      <UniqueIdentifier>{ABC0745B-974F-FE24-406E-12202CDC0ECB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="HyperReal\thirdparty\imgui">
+      <UniqueIdentifier>{556277B0-4172-2381-AA2B-889F965A121A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{2DAB880B-99B4-887C-2230-9F7C8E38947C}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\HyperReal\thirdparty\imgui\imgui.cpp">
+      <Filter>HyperReal\thirdparty\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\HyperReal\thirdparty\imgui\imgui_demo.cpp">
+      <Filter>HyperReal\thirdparty\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\HyperReal\thirdparty\imgui\imgui_draw.cpp">
+      <Filter>HyperReal\thirdparty\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\HyperReal\thirdparty\imgui\imgui_tables.cpp">
+      <Filter>HyperReal\thirdparty\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\HyperReal\thirdparty\imgui\imgui_widgets.cpp">
+      <Filter>HyperReal\thirdparty\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SandboxApp.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

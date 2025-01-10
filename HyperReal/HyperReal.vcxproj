@@ -109,7 +109,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <MinimalRebuild>false</MinimalRebuild>
       <StringPooling>true</StringPooling>
-      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
@@ -136,7 +136,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <MinimalRebuild>false</MinimalRebuild>
       <StringPooling>true</StringPooling>
-      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
@@ -152,7 +152,6 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="src\core-files\ImGui\ImGuiBuild.cpp" />
     <ClInclude Include="src\HyperReal.h" />
     <ClInclude Include="src\core-files\Application.h" />
     <ClInclude Include="src\core-files\Event\ApplicationEvent.h" />
@@ -591,6 +590,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\core-files\Application.cpp" />
+    <ClCompile Include="src\core-files\ImGui\ImGuiBuild.cpp" />
     <ClCompile Include="src\core-files\ImGui\ImGuiLayer.cpp" />
     <ClCompile Include="src\core-files\Layer.cpp" />
     <ClCompile Include="src\core-files\LayerStack.cpp" />

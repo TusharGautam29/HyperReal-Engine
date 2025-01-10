@@ -64,10 +64,10 @@ namespace HyperR
 			HR_CORE_TRACE("{0}, {1}", x, y);*/
 
 			m_Window->OnUpdate();
-			m_ImGuiLayer->begin();
+			m_ImGuiLayer->Begin();
 			for (Layer* layer : m_LayerStack)
 				layer->OnImGuiRender();
-			m_ImGuiLayer->end();
+			m_ImGuiLayer->End();
 		}
 	}
 
