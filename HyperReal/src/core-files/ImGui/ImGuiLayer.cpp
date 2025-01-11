@@ -14,33 +14,40 @@ namespace HyperR {
 	ImGuiLayer::ImGuiLayer()
 		: Layer("ImGuiLayer")
 	{
+		if (!s_ImGuiInitialized) {
+			IMGUI_CHECKVERSION();
+			ImGui::CreateContext();
+			ImGuiContext* ctx = ImGui::GetCurrentContext();
+			assert(ctx != nullptr); // Ensure context is initialized
+			// Setup Dear ImGui context
+			ImGuiIO& io = ImGui::GetIO(); (void)io;
+			io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;       // Enable Keyboard Controls
+			//io.ConfigFlags |= ImGuiConfigFlags_NavEnableGamepad;      // Enable Gamepad Controls
+			io.ConfigFlags |= ImGuiConfigFlags_DockingEnable;           // Enable Docking
+			io.ConfigFlags |= ImGuiConfigFlags_ViewportsEnable;         // Enable Multi-Viewport / Platform Windows
+			//io.ConfigFlags |= ImGuiConfigFlags_ViewportsNoTaskBarIcons;
+			//io.ConfigFlags |= ImGuiConfigFlags_ViewportsNoMerge;
+			// Setup Dear ImGui style
+			ImGui::StyleColorsDark();
+			//ImGui::StyleColorsClassic();
+
+			// When viewports are enabled we tweak WindowRounding/WindowBg so platform windows can look identical to regular ones.
+			ImGuiStyle& style = ImGui::GetStyle();
+			if (io.ConfigFlags & ImGuiConfigFlags_ViewportsEnable)
+			{
+				style.WindowRounding = 0.0f;
+				style.Colors[ImGuiCol_WindowBg].w = 1.0f;
+			}
+
+			s_ImGuiInitialized = true;
+		}
 	}
 	ImGuiLayer::~ImGuiLayer()
 	{
 	}
 	void ImGuiLayer::OnAttach()
 	{
-		// Setup Dear ImGui context
-		IMGUI_CHECKVERSION();
-		ImGui::CreateContext();
-		ImGuiIO& io = ImGui::GetIO(); (void)io;
-		io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;       // Enable Keyboard Controls
-		//io.ConfigFlags |= ImGuiConfigFlags_NavEnableGamepad;      // Enable Gamepad Controls
-		io.ConfigFlags |= ImGuiConfigFlags_DockingEnable;           // Enable Docking
-		io.ConfigFlags |= ImGuiConfigFlags_ViewportsEnable;         // Enable Multi-Viewport / Platform Windows
-		//io.ConfigFlags |= ImGuiConfigFlags_ViewportsNoTaskBarIcons;
-		//io.ConfigFlags |= ImGuiConfigFlags_ViewportsNoMerge;
-		// Setup Dear ImGui style
-		ImGui::StyleColorsDark();
-		//ImGui::StyleColorsClassic();
-
-		// When viewports are enabled we tweak WindowRounding/WindowBg so platform windows can look identical to regular ones.
-		ImGuiStyle& style = ImGui::GetStyle();
-		if (io.ConfigFlags & ImGuiConfigFlags_ViewportsEnable)
-		{
-			style.WindowRounding = 0.0f;
-			style.Colors[ImGuiCol_WindowBg].w = 1.0f;
-		}
+		
 		Application& app = Application::Get();
 		GLFWwindow* window = static_cast<GLFWwindow*>(app.GetWindow().GetNativeWindow());
 
@@ -59,7 +66,9 @@ namespace HyperR {
 	{
 		ImGui_ImplOpenGL3_NewFrame();
 		ImGui_ImplGlfw_NewFrame();
+		std::cout << "ImGui::NewFrame() called" << std::endl;
 		ImGui::NewFrame();
+
 	}
 	void ImGuiLayer::End()
 	{

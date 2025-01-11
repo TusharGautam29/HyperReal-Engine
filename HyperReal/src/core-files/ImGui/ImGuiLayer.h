@@ -15,6 +15,7 @@ namespace HyperR {
 		virtual void OnImGuiRender() override;
 		void Begin();
 		void End();
+		bool s_ImGuiInitialized = false;
 	private:
 		float m_Time = 0.0f;
 

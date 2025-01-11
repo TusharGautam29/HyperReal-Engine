@@ -102,7 +102,7 @@ project "Sandbox"
 	{
 		"%{prj.name}/src/**.h",
 		"%{prj.name}/src/**.cpp",
-		"HyperReal/thirdparty/imgui/*.cpp"
+		--"HyperReal/thirdparty/imgui/*.cpp"
 	}
 	includedirs
 	{
