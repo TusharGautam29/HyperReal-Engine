@@ -27,9 +27,10 @@ group ""
 
 project "HyperReal"
 	location "HyperReal"
-	kind "SharedLib"
+	kind "StaticLib"
 	language "C++"
-	staticruntime "off"
+	cppdialect "C++17"
+	staticruntime "on"
 	
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -44,6 +45,10 @@ project "HyperReal"
 		"%{prj.name}/thirdparty/glm/glm/**.hpp",
 		"%{prj.name}/thirdparty/glm/glm/**.inl"
 
+	}
+	defines
+	{
+		"_CRT_SECURE_NO_WARNINGS"
 	}
 	includedirs
 	{
@@ -64,7 +69,7 @@ project "HyperReal"
 
 	filter "system:windows"
 		cppdialect "C++17"
-		systemversion "10.0.19041.0"
+		systemversion "latest"
 		defines
 		{
 			"HR_PLATFORM_WINDOWS",
@@ -73,44 +78,38 @@ project "HyperReal"
 			"IMGUI_IMPL_OPENGL_LOADER_GLAD"
 		}
 
-		postbuildcommands
-		{
-			("{COPY} %{cfg.buildtarget.relpath} \"../bin/" .. outputdir .. "/Sandbox/\"")
-		}
-
 	filter "configurations:Debug"
 		defines "HR_DEBUG"
 		runtime "Debug"
-		symbols "On"
+		symbols "on"
 	filter "configurations:Release"
 		defines "HR_RELEASE"
 		runtime "Release"
-		optimize "On"
+		optimize "on"
 	filter "configurations:Dist"
 		defines "HR_DIST"
 		runtime "Release"
-		optimize "On"
+		optimize "on"
 
 project "Sandbox"
 	location "Sandbox"
 	kind "ConsoleApp"
 	language "C++"
-	staticruntime "off"
+	cppdialect "C++17"
+	staticruntime "on"
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
 	files
 	{
 		"%{prj.name}/src/**.h",
-		"%{prj.name}/src/**.cpp",
-		--"HyperReal/thirdparty/imgui/*.cpp"
+		"%{prj.name}/src/**.cpp"
 	}
 	includedirs
 	{
 		"HyperReal/thirdparty/spdlog/include",
 		"HyperReal/src",
 		"HyperReal/thirdparty",
-		"%{IncludeDir.glm}",
-		"%{IncludeDir.ImGui}"
+		"%{IncludeDir.glm}"
 	}
 	links	
 	{
@@ -119,7 +118,7 @@ project "Sandbox"
 
 	filter "system:windows"
 		cppdialect "C++17"
-		systemversion "10.0.19041.0"
+		systemversion "latest"
 		defines
 		{
 			"HR_PLATFORM_WINDOWS"
@@ -127,12 +126,12 @@ project "Sandbox"
 	filter "configurations:Debug"
 		defines "HR_DEBUG"
 		runtime "Debug"
-		symbols "On"
+		symbols "on"
 	filter "configurations:Release"
 		defines "HR_RELEASE"
 		runtime "Release"
-		optimize "On"
+		optimize "on"
 	filter "configurations:Dist"
 		defines "HR_DIST"
 		runtime "Release"
-		optimize "On"
+		optimize "on"

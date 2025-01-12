@@ -1,10 +1,15 @@
 #pragma once
 #ifdef HR_PLATFORM_WINDOWS
+#if HR_DYNAMIC_LINK
 	#ifdef HR_BUILD_DLL
 		#define HyperR_API __declspec(dllexport)
 	#else
 		#define HyperR_API __declspec(dllimport)
 	#endif
+#else
+	#define HyperR_API
+#endif
+
 #else
 	#error HyperReal only supports Windows!
 #endif
