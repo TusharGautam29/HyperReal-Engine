@@ -29,7 +29,7 @@ public:
 	
 	void OnUpdate() override
 	{
-		HR_INFO("ExampleLayer::Update");
+		//HR_INFO("ExampleLayer::Update");
 		if (HyperR::Input::IsKeyPressed(HR_KEY_TAB))
 		{
 			HR_INFO("Tab key is pressed");
