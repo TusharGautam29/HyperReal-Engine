@@ -16,9 +16,6 @@
     <Filter Include="src\core-files\Platform">
       <UniqueIdentifier>{D9212F69-4559-7700-4E63-DB23BA199EF9}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\core-files\Platform\OpenGL">
-      <UniqueIdentifier>{ED1CEA00-D942-B467-C288-3933AE4DD933}</UniqueIdentifier>
-    </Filter>
     <Filter Include="src\core-files\Platform\Windows">
       <UniqueIdentifier>{13954976-7F78-58B6-887B-86F2F4DD1E07}</UniqueIdentifier>
     </Filter>
@@ -80,9 +77,6 @@
     </ClInclude>
     <ClInclude Include="src\core-files\MouseButtoncodes.h">
       <Filter>src\core-files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\core-files\Platform\OpenGL\ImGuiOpenGLRenderer.h">
-      <Filter>src\core-files\Platform\OpenGL</Filter>
     </ClInclude>
     <ClInclude Include="src\core-files\Platform\Windows\WindowsInput.h">
       <Filter>src\core-files\Platform\Windows</Filter>
@@ -1358,6 +1352,9 @@
     <ClCompile Include="src\core-files\Application.cpp">
       <Filter>src\core-files</Filter>
     </ClCompile>
+    <ClCompile Include="src\core-files\ImGui\ImGuiBuild.cpp">
+      <Filter>src\core-files\ImGui</Filter>
+    </ClCompile>
     <ClCompile Include="src\core-files\ImGui\ImGuiLayer.cpp">
       <Filter>src\core-files\ImGui</Filter>
     </ClCompile>
@@ -1369,9 +1366,6 @@
     </ClCompile>
     <ClCompile Include="src\core-files\Log.cpp">
       <Filter>src\core-files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\core-files\Platform\OpenGL\ImGuiOpenGLRenderer.cpp">
-      <Filter>src\core-files\Platform\OpenGL</Filter>
     </ClCompile>
     <ClCompile Include="src\core-files\Platform\Windows\WindowsInput.cpp">
       <Filter>src\core-files\Platform\Windows</Filter>

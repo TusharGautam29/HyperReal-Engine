@@ -101,13 +101,16 @@ project "Sandbox"
 	files
 	{
 		"%{prj.name}/src/**.h",
-		"%{prj.name}/src/**.cpp"
+		"%{prj.name}/src/**.cpp",
+		--"HyperReal/thirdparty/imgui/*.cpp"
 	}
 	includedirs
 	{
 		"HyperReal/thirdparty/spdlog/include",
 		"HyperReal/src",
-		"%{IncludeDir.glm}"
+		"HyperReal/thirdparty",
+		"%{IncludeDir.glm}",
+		"%{IncludeDir.ImGui}"
 	}
 	links	
 	{

@@ -164,7 +164,6 @@
     <ClInclude Include="src\core-files\LayerStack.h" />
     <ClInclude Include="src\core-files\Log.h" />
     <ClInclude Include="src\core-files\MouseButtoncodes.h" />
-    <ClInclude Include="src\core-files\Platform\OpenGL\ImGuiOpenGLRenderer.h" />
     <ClInclude Include="src\core-files\Platform\Windows\WindowsInput.h" />
     <ClInclude Include="src\core-files\Platform\Windows\WindowsWindow.h" />
     <ClInclude Include="src\core-files\Window.h" />
@@ -591,11 +590,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\core-files\Application.cpp" />
+    <ClCompile Include="src\core-files\ImGui\ImGuiBuild.cpp" />
     <ClCompile Include="src\core-files\ImGui\ImGuiLayer.cpp" />
     <ClCompile Include="src\core-files\Layer.cpp" />
     <ClCompile Include="src\core-files\LayerStack.cpp" />
     <ClCompile Include="src\core-files\Log.cpp" />
-    <ClCompile Include="src\core-files\Platform\OpenGL\ImGuiOpenGLRenderer.cpp" />
     <ClCompile Include="src\core-files\Platform\Windows\WindowsInput.cpp" />
     <ClCompile Include="src\core-files\Platform\Windows\WindowsWindow.cpp" />
     <ClCompile Include="src\hrpch.cpp">
