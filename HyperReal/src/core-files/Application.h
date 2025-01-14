@@ -6,6 +6,8 @@
 #include "LayerStack.h"
 #include "core-files/ImGui/ImGuiLayer.h"
 
+#include "Renderer/Shader.h"
+
 namespace HyperR
 {
 	class HyperR_API Application
@@ -32,6 +34,7 @@ namespace HyperR
 		LayerStack m_LayerStack;
 	
 		unsigned int m_VertexArray, m_VertexBuffer, m_IndexBuffer;
+		std::unique_ptr<Shader> m_Shader;
 	private:
 		static Application* s_Instance;
 	};

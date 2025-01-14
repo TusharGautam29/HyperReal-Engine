@@ -143,6 +143,7 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\core-files\Renderer\Shader.h" />
     <ClInclude Include="src\core-files\Platform\OpenGL\OpenGLContext.h" />
     <ClInclude Include="src\core-files\Renderer\GraphicsContext.h" />
     <ClInclude Include="src\HyperReal.h" />
@@ -582,6 +583,7 @@
     <ClInclude Include="thirdparty\glm\glm\vector_relational.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\core-files\Renderer\Shader.cpp" />
     <ClCompile Include="src\core-files\Platform\OpenGL\OpenGLContext.cpp" />
     <ClCompile Include="src\core-files\Application.cpp" />
     <ClCompile Include="src\core-files\ImGui\ImGuiBuild.cpp" />
