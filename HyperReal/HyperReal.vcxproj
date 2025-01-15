@@ -143,9 +143,6 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="src\core-files\Renderer\Shader.h" />
-    <ClInclude Include="src\core-files\Platform\OpenGL\OpenGLContext.h" />
-    <ClInclude Include="src\core-files\Renderer\GraphicsContext.h" />
     <ClInclude Include="src\HyperReal.h" />
     <ClInclude Include="src\core-files\Application.h" />
     <ClInclude Include="src\core-files\Event\ApplicationEvent.h" />
@@ -158,8 +155,14 @@
     <ClInclude Include="src\core-files\LayerStack.h" />
     <ClInclude Include="src\core-files\Log.h" />
     <ClInclude Include="src\core-files\MouseButtoncodes.h" />
+    <ClInclude Include="src\core-files\Platform\OpenGL\OpenGLBuffer.h" />
+    <ClInclude Include="src\core-files\Platform\OpenGL\OpenGLContext.h" />
     <ClInclude Include="src\core-files\Platform\Windows\WindowsInput.h" />
     <ClInclude Include="src\core-files\Platform\Windows\WindowsWindow.h" />
+    <ClInclude Include="src\core-files\Renderer\Buffer.h" />
+    <ClInclude Include="src\core-files\Renderer\GraphicsContext.h" />
+    <ClInclude Include="src\core-files\Renderer\Renderer.h" />
+    <ClInclude Include="src\core-files\Renderer\Shader.h" />
     <ClInclude Include="src\core-files\Window.h" />
     <ClInclude Include="src\core-files\core.h" />
     <ClInclude Include="src\core-files\entrypoint.h" />
@@ -583,16 +586,19 @@
     <ClInclude Include="thirdparty\glm\glm\vector_relational.hpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\core-files\Renderer\Shader.cpp" />
-    <ClCompile Include="src\core-files\Platform\OpenGL\OpenGLContext.cpp" />
     <ClCompile Include="src\core-files\Application.cpp" />
     <ClCompile Include="src\core-files\ImGui\ImGuiBuild.cpp" />
     <ClCompile Include="src\core-files\ImGui\ImGuiLayer.cpp" />
     <ClCompile Include="src\core-files\Layer.cpp" />
     <ClCompile Include="src\core-files\LayerStack.cpp" />
     <ClCompile Include="src\core-files\Log.cpp" />
+    <ClCompile Include="src\core-files\Platform\OpenGL\OpenGLBuffer.cpp" />
+    <ClCompile Include="src\core-files\Platform\OpenGL\OpenGLContext.cpp" />
     <ClCompile Include="src\core-files\Platform\Windows\WindowsInput.cpp" />
     <ClCompile Include="src\core-files\Platform\Windows\WindowsWindow.cpp" />
+    <ClCompile Include="src\core-files\Renderer\Buffer.cpp" />
+    <ClCompile Include="src\core-files\Renderer\Renderer.cpp" />
+    <ClCompile Include="src\core-files\Renderer\Shader.cpp" />
     <ClCompile Include="src\hrpch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>

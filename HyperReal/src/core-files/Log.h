@@ -23,10 +23,10 @@ namespace HyperR {
 #define HR_CORE_INFO(...)     ::HyperR::Log::GetCoreLogger()->info(__VA_ARGS__)
 #define HR_CORE_WARN(...)     ::HyperR::Log::GetCoreLogger()->warn(__VA_ARGS__)
 #define HR_CORE_ERROR(...)    ::HyperR::Log::GetCoreLogger()->error(__VA_ARGS__)
-#define HR_CORE_FATAL(...)    ::HyperR::Log::GetCoreLogger()->fatal(__VA_ARGS__)
+#define HR_CORE_FATAL(...)    ::HyperR::Log::GetCoreLogger()->critical(__VA_ARGS__)
 // Client log macros
 #define HR_TRACE(...)	      ::HyperR::Log::GetClientLogger()->trace(__VA_ARGS__)
 #define HR_INFO(...)	      ::HyperR::Log::GetClientLogger()->info(__VA_ARGS__)
 #define HR_WARN(...)	      ::HyperR::Log::GetClientLogger()->warn(__VA_ARGS__)
 #define HR_ERROR(...)	      ::HyperR::Log::GetClientLogger()->error(__VA_ARGS__)
-#define HR_FATAL(...)	      ::HyperR::Log::GetClientLogger()->fatal(__VA_ARGS__)
+#define HR_FATAL(...)	      ::HyperR::Log::GetClientLogger()->critical(__VA_ARGS__)

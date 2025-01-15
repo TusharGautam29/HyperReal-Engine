@@ -16,8 +16,14 @@
     <Filter Include="src\core-files\Platform">
       <UniqueIdentifier>{D9212F69-4559-7700-4E63-DB23BA199EF9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\core-files\Platform\OpenGL">
+      <UniqueIdentifier>{ED1CEA00-D942-B467-C288-3933AE4DD933}</UniqueIdentifier>
+    </Filter>
     <Filter Include="src\core-files\Platform\Windows">
       <UniqueIdentifier>{13954976-7F78-58B6-887B-86F2F4DD1E07}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\core-files\Renderer">
+      <UniqueIdentifier>{2B290C44-9760-54DB-A06A-B8FE0C217BD4}</UniqueIdentifier>
     </Filter>
     <Filter Include="thirdparty">
       <UniqueIdentifier>{50A5DA7C-3C5D-1CCA-A564-F525913BB7BA}</UniqueIdentifier>
@@ -78,11 +84,29 @@
     <ClInclude Include="src\core-files\MouseButtoncodes.h">
       <Filter>src\core-files</Filter>
     </ClInclude>
+    <ClInclude Include="src\core-files\Platform\OpenGL\OpenGLBuffer.h">
+      <Filter>src\core-files\Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="src\core-files\Platform\OpenGL\OpenGLContext.h">
+      <Filter>src\core-files\Platform\OpenGL</Filter>
+    </ClInclude>
     <ClInclude Include="src\core-files\Platform\Windows\WindowsInput.h">
       <Filter>src\core-files\Platform\Windows</Filter>
     </ClInclude>
     <ClInclude Include="src\core-files\Platform\Windows\WindowsWindow.h">
       <Filter>src\core-files\Platform\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="src\core-files\Renderer\Buffer.h">
+      <Filter>src\core-files\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\core-files\Renderer\GraphicsContext.h">
+      <Filter>src\core-files\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\core-files\Renderer\Renderer.h">
+      <Filter>src\core-files\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\core-files\Renderer\Shader.h">
+      <Filter>src\core-files\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="src\core-files\Window.h">
       <Filter>src\core-files</Filter>
@@ -1347,9 +1371,6 @@
     <ClInclude Include="thirdparty\glm\glm\vector_relational.hpp">
       <Filter>thirdparty\glm\glm</Filter>
     </ClInclude>
-    <ClInclude Include="src\core-files\Renderer\GraphicsContext.h" />
-    <ClInclude Include="src\core-files\Platform\OpenGL\OpenGLContext.h" />
-    <ClInclude Include="src\core-files\Renderer\Shader.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\core-files\Application.cpp">
@@ -1370,16 +1391,29 @@
     <ClCompile Include="src\core-files\Log.cpp">
       <Filter>src\core-files</Filter>
     </ClCompile>
+    <ClCompile Include="src\core-files\Platform\OpenGL\OpenGLBuffer.cpp">
+      <Filter>src\core-files\Platform\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core-files\Platform\OpenGL\OpenGLContext.cpp">
+      <Filter>src\core-files\Platform\OpenGL</Filter>
+    </ClCompile>
     <ClCompile Include="src\core-files\Platform\Windows\WindowsInput.cpp">
       <Filter>src\core-files\Platform\Windows</Filter>
     </ClCompile>
     <ClCompile Include="src\core-files\Platform\Windows\WindowsWindow.cpp">
       <Filter>src\core-files\Platform\Windows</Filter>
     </ClCompile>
+    <ClCompile Include="src\core-files\Renderer\Buffer.cpp">
+      <Filter>src\core-files\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core-files\Renderer\Renderer.cpp">
+      <Filter>src\core-files\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core-files\Renderer\Shader.cpp">
+      <Filter>src\core-files\Renderer</Filter>
+    </ClCompile>
     <ClCompile Include="src\hrpch.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="src\core-files\Platform\OpenGL\OpenGLContext.cpp" />
-    <ClCompile Include="src\core-files\Renderer\Shader.cpp" />
   </ItemGroup>
 </Project>

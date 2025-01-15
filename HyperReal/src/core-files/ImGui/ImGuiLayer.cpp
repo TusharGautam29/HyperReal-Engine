@@ -85,6 +85,7 @@ namespace HyperR {
 			ImGui::RenderPlatformWindowsDefault();
 			glfwMakeContextCurrent(backup_current_context);
 		}
+		
 	}
 	void ImGuiLayer::OnImGuiRender()
 	{

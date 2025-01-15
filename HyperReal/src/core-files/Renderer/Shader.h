@@ -11,6 +11,6 @@ namespace HyperR {
 		void Unbind() const;
 
 	private:
-		uint32_t m_RendererID;
+		unsigned int m_RendererID;
 	};
 }
