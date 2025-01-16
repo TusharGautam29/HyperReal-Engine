@@ -143,6 +143,8 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\core-files\Platform\OpenGL\OpenGLVertexArray.h" />
+    <ClInclude Include="src\core-files\Renderer\VertexArray.h" />
     <ClInclude Include="src\HyperReal.h" />
     <ClInclude Include="src\core-files\Application.h" />
     <ClInclude Include="src\core-files\Event\ApplicationEvent.h" />
@@ -594,11 +596,13 @@
     <ClCompile Include="src\core-files\Log.cpp" />
     <ClCompile Include="src\core-files\Platform\OpenGL\OpenGLBuffer.cpp" />
     <ClCompile Include="src\core-files\Platform\OpenGL\OpenGLContext.cpp" />
+    <ClCompile Include="src\core-files\Platform\OpenGL\OpenGLVertexArray.cpp" />
     <ClCompile Include="src\core-files\Platform\Windows\WindowsInput.cpp" />
     <ClCompile Include="src\core-files\Platform\Windows\WindowsWindow.cpp" />
     <ClCompile Include="src\core-files\Renderer\Buffer.cpp" />
     <ClCompile Include="src\core-files\Renderer\Renderer.cpp" />
     <ClCompile Include="src\core-files\Renderer\Shader.cpp" />
+    <ClCompile Include="src\core-files\Renderer\VertexArray.cpp" />
     <ClCompile Include="src\hrpch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
