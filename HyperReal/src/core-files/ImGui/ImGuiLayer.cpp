@@ -14,11 +14,19 @@ namespace HyperR {
 	ImGuiLayer::ImGuiLayer()
 		: Layer("ImGuiLayer")
 	{
+	}
+	ImGuiLayer::~ImGuiLayer()
+	{
+	}
+	void ImGuiLayer::OnAttach()
+	{
 		if (!s_ImGuiInitialized) {
 			IMGUI_CHECKVERSION();
 			ImGui::CreateContext();
-			ImGuiContext* ctx = ImGui::GetCurrentContext();
-			assert(ctx != nullptr); // Ensure context is initialized
+			if(ImGui::GetCurrentContext() != nullptr)
+				HR_INFO("ImGui context created!");
+			else 
+				HR_INFO("ImGui context not created!");
 			// Setup Dear ImGui context
 			ImGuiIO& io = ImGui::GetIO(); (void)io;
 			io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;       // Enable Keyboard Controls
@@ -41,13 +49,6 @@ namespace HyperR {
 
 			s_ImGuiInitialized = true;
 		}
-	}
-	ImGuiLayer::~ImGuiLayer()
-	{
-	}
-	void ImGuiLayer::OnAttach()
-	{
-		
 		Application& app = Application::Get();
 		GLFWwindow* window = static_cast<GLFWwindow*>(app.GetWindow().GetNativeWindow());
 
@@ -66,7 +67,7 @@ namespace HyperR {
 	{
 		ImGui_ImplOpenGL3_NewFrame();
 		ImGui_ImplGlfw_NewFrame();
-		std::cout << "ImGui::NewFrame() called" << std::endl;
+		//std::cout << "ImGui::NewFrame() called" << std::endl;
 		ImGui::NewFrame();
 
 	}
@@ -84,6 +85,7 @@ namespace HyperR {
 			ImGui::RenderPlatformWindowsDefault();
 			glfwMakeContextCurrent(backup_current_context);
 		}
+		
 	}
 	void ImGuiLayer::OnImGuiRender()
 	{

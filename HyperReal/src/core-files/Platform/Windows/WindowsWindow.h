@@ -1,6 +1,7 @@
 #pragma once
 #include "core-files/Window.h"
 #include <GLFW/glfw3.h>
+#include "core-files/Renderer/GraphicsContext.h"
 namespace HyperR {
 	class WindowsWindow : public Window
 	{
@@ -35,6 +36,7 @@ namespace HyperR {
 	private:
 		
 		GLFWwindow* m_Window;
+		GraphicsContext* m_Context;
 		
 		struct WindowData
 		{

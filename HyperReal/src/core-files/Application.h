@@ -6,6 +6,10 @@
 #include "LayerStack.h"
 #include "core-files/ImGui/ImGuiLayer.h"
 
+#include "Renderer/Shader.h"
+#include "Renderer/Buffer.h"
+#include "Renderer/VertexArray.h"
+
 namespace HyperR
 {
 	class HyperR_API Application
@@ -31,6 +35,10 @@ namespace HyperR
 		bool m_Running = true;
 		LayerStack m_LayerStack;
 	
+		std::shared_ptr<Shader> m_Shader;
+		std::shared_ptr<VertexArray> m_VertexArray;
+		std::shared_ptr<Shader> m_BlueShader;
+		std::shared_ptr<VertexArray> m_SquareVA;
 	private:
 		static Application* s_Instance;
 	};

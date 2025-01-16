@@ -15,21 +15,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\HyperReal\thirdparty\imgui\imgui.cpp">
-      <Filter>HyperReal\thirdparty\imgui</Filter>
-    </ClCompile>
-    <ClCompile Include="..\HyperReal\thirdparty\imgui\imgui_demo.cpp">
-      <Filter>HyperReal\thirdparty\imgui</Filter>
-    </ClCompile>
-    <ClCompile Include="..\HyperReal\thirdparty\imgui\imgui_draw.cpp">
-      <Filter>HyperReal\thirdparty\imgui</Filter>
-    </ClCompile>
-    <ClCompile Include="..\HyperReal\thirdparty\imgui\imgui_tables.cpp">
-      <Filter>HyperReal\thirdparty\imgui</Filter>
-    </ClCompile>
-    <ClCompile Include="..\HyperReal\thirdparty\imgui\imgui_widgets.cpp">
-      <Filter>HyperReal\thirdparty\imgui</Filter>
-    </ClCompile>
     <ClCompile Include="src\SandboxApp.cpp">
       <Filter>src</Filter>
     </ClCompile>
