@@ -1377,6 +1377,7 @@
     <ClInclude Include="src\core-files\Renderer\RenderCommand.h" />
     <ClInclude Include="src\core-files\Platform\OpenGL\OpenGLRendererAPI.h" />
     <ClInclude Include="src\core-files\Renderer\OrthographicCamera.h" />
+    <ClInclude Include="src\core-files\Core\Timestep.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\core-files\Application.cpp">

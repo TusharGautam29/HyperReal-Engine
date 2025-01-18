@@ -6,10 +6,8 @@
 #include "LayerStack.h"
 #include "core-files/ImGui/ImGuiLayer.h"
 
-#include "Renderer/Shader.h"
-#include "Renderer/Buffer.h"
-#include "Renderer/VertexArray.h"
-#include "Renderer/OrthographicCamera.h"
+
+#include "Core/Timestep.h"
 
 namespace HyperR
 {
@@ -35,13 +33,8 @@ namespace HyperR
 		ImGuiLayer* m_ImGuiLayer;
 		bool m_Running = true;
 		LayerStack m_LayerStack;
-	
-		std::shared_ptr<Shader> m_Shader;
-		std::shared_ptr<VertexArray> m_VertexArray;
-		std::shared_ptr<Shader> m_BlueShader;
-		std::shared_ptr<VertexArray> m_SquareVA;
-		OrthographicCamera m_Camera;
-	private:
+
+		float m_LastFrameTime = 0.0f;
 		static Application* s_Instance;
 	};
 	Application* CreateApplication();
