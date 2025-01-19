@@ -143,6 +143,7 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\core-files\Platform\OpenGL\OpenGLShader.h" />
     <ClInclude Include="src\core-files\Core\Timestep.h" />
     <ClInclude Include="src\core-files\Platform\OpenGL\OpenGLRendererAPI.h" />
     <ClInclude Include="src\core-files\Platform\OpenGL\OpenGLVertexArray.h" />
@@ -593,6 +594,7 @@
     <ClInclude Include="thirdparty\glm\glm\vector_relational.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\core-files\Platform\OpenGL\OpenGLShader.cpp" />
     <ClCompile Include="src\core-files\Application.cpp" />
     <ClCompile Include="src\core-files\ImGui\ImGuiBuild.cpp" />
     <ClCompile Include="src\core-files\ImGui\ImGuiLayer.cpp" />
