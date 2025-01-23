@@ -1,4 +1,6 @@
 #pragma once
+#include <memory>
+
 #ifdef HR_PLATFORM_WINDOWS
 	#ifdef HR_BUILD_DLL
 		#define HyperR_API __declspec(dllexport)
@@ -21,3 +23,10 @@
 #define BIT(x) (1 << x)
 
 #define HR_BIND_EVENT_FN(fn) std::bind(&fn, this, std::placeholders::_1)
+
+namespace HyperR {
+	template<typename T>
+	using Scope = std::unique_ptr<T>;
+	template<typename T>
+	using Ref = std::shared_ptr<T>;
+}
