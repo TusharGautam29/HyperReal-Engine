@@ -18,11 +18,11 @@ IncludeDir["ImGui"]="HyperReal/thirdparty/imgui"
 IncludeDir["glm"]="HyperReal/thirdparty/glm"
 IncludeDir["stb_image"]="HyperReal/thirdparty/stb_image"
 
-
 group "Dependencies"
 	include "HyperReal/thirdparty/GLFW"
 	include "HyperReal/thirdparty/Glad"
 	include "HyperReal/thirdparty/imgui"
+	
 
 group ""
 
@@ -43,8 +43,6 @@ project "HyperReal"
 	{
 		"%{prj.name}/src/**.h",
 		"%{prj.name}/src/**.cpp",
-		"%{prj.name}/thirdparty/stb_image/**.cpp",
-		"%{prj.name}/thirdparty/stb_image/**.h",
 		"%{prj.name}/thirdparty/glm/glm/**.hpp",
 		"%{prj.name}/thirdparty/glm/glm/**.inl"
 
