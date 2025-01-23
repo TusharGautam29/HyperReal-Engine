@@ -18,6 +18,7 @@
 #include "core-files/Renderer/RenderCommand.h"
 #include "core-files/Renderer/Buffer.h"
 #include "core-files/Renderer/Shader.h"
+#include "core-files/Renderer/Texture.h"
 #include "core-files/Renderer/VertexArray.h"
 #include "core-files/Renderer/OrthographicCamera.h"
 // -----------------------------------
