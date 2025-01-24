@@ -162,6 +162,7 @@ public:
 		)";
 		m_TextureShader.reset(HyperR::Shader::Create(textureShaderVertexSrc, textureShaderFragmentSrc));
 		m_Texture = HyperR::Texture2D::Create("assets/textures/Checkerboard.png");
+		m_LogoTexture = HyperR::Texture2D::Create("assets/textures/sample.jpeg");
 		std::dynamic_pointer_cast<HyperR::OpenGLShader>(m_TextureShader)->Bind();
 		std::dynamic_pointer_cast<HyperR::OpenGLShader>(m_TextureShader)->UploadUniformInt("u_Texture", 0);
 	}
@@ -213,6 +214,9 @@ public:
 
 		m_Texture->Bind();
 		HyperR::Renderer::Submit(m_TextureShader, m_SquareVA, glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
+		
+		m_LogoTexture->Bind();
+		HyperR::Renderer::Submit(m_TextureShader, m_SquareVA, glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
 		// Triangle
 		// HyperR::Renderer::Submit(m_Shader, m_VertexArray);
 
@@ -234,8 +238,10 @@ public:
 		std::shared_ptr<HyperR::Shader> m_Shader;
 		std::shared_ptr<HyperR::VertexArray> m_VertexArray;
 		HyperR::Ref<HyperR::Shader> m_FlatColorShader, m_TextureShader;
+
 		HyperR::Ref<HyperR::VertexArray> m_SquareVA;
 		HyperR::Ref<HyperR::Texture2D> m_Texture;
+		HyperR::Ref<HyperR::Texture2D> m_LogoTexture;
 		HyperR::OrthographicCamera m_Camera;
 
 		glm::vec3 m_SquareColor = { 0.2f, 0.3f, 0.8f };

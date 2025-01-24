@@ -158,10 +158,16 @@
     <ClInclude Include="src\core-files\MouseButtoncodes.h" />
     <ClInclude Include="src\core-files\Platform\OpenGL\OpenGLBuffer.h" />
     <ClInclude Include="src\core-files\Platform\OpenGL\OpenGLContext.h" />
+    <ClInclude Include="src\core-files\Platform\OpenGL\OpenGLRendererAPI.h" />
+    <ClInclude Include="src\core-files\Platform\OpenGL\OpenGLShader.h" />
+    <ClInclude Include="src\core-files\Platform\OpenGL\OpenGLTexture.h" />
+    <ClInclude Include="src\core-files\Platform\OpenGL\OpenGLVertexArray.h" />
     <ClInclude Include="src\core-files\Platform\Windows\WindowsInput.h" />
     <ClInclude Include="src\core-files\Platform\Windows\WindowsWindow.h" />
     <ClInclude Include="src\core-files\Renderer\Buffer.h" />
     <ClInclude Include="src\core-files\Renderer\GraphicsContext.h" />
+    <ClInclude Include="src\core-files\Renderer\OrthographicCamera.h" />
+    <ClInclude Include="src\core-files\Renderer\RenderCommand.h" />
     <ClInclude Include="src\core-files\Renderer\Renderer.h" />
     <ClInclude Include="src\core-files\Renderer\RendererAPI.h" />
     <ClInclude Include="src\core-files\Renderer\Shader.h" />
@@ -600,6 +606,8 @@
     <ClCompile Include="src\core-files\Platform\OpenGL\OpenGLBuffer.cpp" />
     <ClCompile Include="src\core-files\Platform\OpenGL\OpenGLContext.cpp" />
     <ClCompile Include="src\core-files\Platform\OpenGL\OpenGLRendererAPI.cpp" />
+    <ClCompile Include="src\core-files\Platform\OpenGL\OpenGLShader.cpp" />
+    <ClCompile Include="src\core-files\Platform\OpenGL\OpenGLTexture.cpp" />
     <ClCompile Include="src\core-files\Platform\OpenGL\OpenGLVertexArray.cpp" />
     <ClCompile Include="src\core-files\Platform\Windows\WindowsInput.cpp" />
     <ClCompile Include="src\core-files\Platform\Windows\WindowsWindow.cpp" />
@@ -609,7 +617,7 @@
     <ClCompile Include="src\core-files\Renderer\Renderer.cpp" />
     <ClCompile Include="src\core-files\Renderer\RendererAPI.cpp" />
     <ClCompile Include="src\core-files\Renderer\Shader.cpp" />
-    <ClCompile Include="src\core-files\Renderer\OrthographicCamera.cpp" />
+    <ClCompile Include="src\core-files\Renderer\Texture.cpp" />
     <ClCompile Include="src\core-files\Renderer\VertexArray.cpp" />
     <ClCompile Include="src\hrpch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>

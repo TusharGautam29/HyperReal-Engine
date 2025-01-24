@@ -10,6 +10,10 @@ namespace HyperR {
 		{
 			s_RendererAPI->SetClearColor(color);
 		}
+		inline static void Init()
+		{
+			s_RendererAPI->Init();
+		}
 		inline static void Clear()
 		{
 			s_RendererAPI->Clear();

@@ -43,6 +43,8 @@ project "HyperReal"
 	{
 		"%{prj.name}/src/**.h",
 		"%{prj.name}/src/**.cpp",
+		"%{prj.name}/thirdparty/stb_image/**.cpp",
+		"%{prj.name}/thirdparty/stb_image/**.h",
 		"%{prj.name}/thirdparty/glm/glm/**.hpp",
 		"%{prj.name}/thirdparty/glm/glm/**.inl"
 
