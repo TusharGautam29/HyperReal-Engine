@@ -29,10 +29,13 @@ namespace HyperR
 	private:
 
 		bool OnWindowClose(WindowCloseEvent& e);
+		bool OnWindowResize(WindowResizeEvent& e);
 		std::unique_ptr<Window> m_Window;
 		ImGuiLayer* m_ImGuiLayer;
 		bool m_Running = true;
 		LayerStack m_LayerStack;
+
+		bool m_Minimized = false;
 
 		float m_LastFrameTime = 0.0f;
 		static Application* s_Instance;
