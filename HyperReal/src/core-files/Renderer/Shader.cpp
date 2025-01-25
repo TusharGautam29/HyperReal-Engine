@@ -15,4 +15,15 @@ namespace HyperR {
 		return nullptr;
 
 	}
+	Shader* Shader::Create(const std::string& filepath)
+	{
+		switch (Renderer::GetAPI())
+		{
+			case RendererAPI::API::None:    HR_CORE_ASSERT(false, "RenderererAPI::None is currently not supported!"); return nullptr;
+			case RendererAPI::API::OpenGL:  return new OpenGLShader(filepath);
+		}
+		HR_CORE_ASSERT(false, "Unknown RendererAPI!");
+		return nullptr;
+
+	}
 }
