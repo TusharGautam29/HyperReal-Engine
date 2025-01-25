@@ -1,6 +1,6 @@
 #include <HyperReal.h>
 //#include "core-files/core.h"
-#include "core-files/Platform/OpenGL/OpenGLShader.h"
+#include "Platform/OpenGL/OpenGLShader.h"
 #include "imgui/imgui.h"
 
 #include <glm/gtc/matrix_transform.hpp>

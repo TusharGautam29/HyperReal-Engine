@@ -8,7 +8,7 @@
 #include <GLFW/glfw3.h>
 #include <glad/glad.h>
 
-#include "core-files/Application.h"
+#include "core-files/Core/Application.h"
 
 namespace HyperR {
 	ImGuiLayer::ImGuiLayer()

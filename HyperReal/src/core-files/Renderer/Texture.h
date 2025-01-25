@@ -1,6 +1,6 @@
 #pragma once
 #include <string>
-#include "core-files/Core.h"
+#include "core-files/Core/Core.h"
 namespace HyperR {
 	class Texture
 	{

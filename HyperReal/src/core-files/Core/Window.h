@@ -1,6 +1,6 @@
 #pragma once
 #include "hrpch.h"
-#include "core-files/Core.h"
+#include "core-files/Core/Core.h"
 #include "core-files/Event/Event.h"
 namespace HyperR {
 	struct WindowProps

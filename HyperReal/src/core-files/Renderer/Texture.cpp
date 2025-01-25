@@ -1,7 +1,7 @@
 #include "hrpch.h"
 #include "Texture.h"
 #include "Renderer.h"
-#include "core-files/Platform/OpenGL/OpenGLTexture.h"
+#include "Platform/OpenGL/OpenGLTexture.h"
 namespace HyperR {
 	Ref<Texture2D> Texture2D::Create(const std::string& path)
 	{

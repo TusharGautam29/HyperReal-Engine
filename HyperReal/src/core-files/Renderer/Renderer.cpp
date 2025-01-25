@@ -1,6 +1,6 @@
 #include "hrpch.h"
 #include "Renderer.h"
-#include "core-files/Platform/OpenGL/OpenGLShader.h"
+#include "Platform/OpenGL/OpenGLShader.h"
 namespace HyperR {
 	Renderer::SceneData* Renderer::m_SceneData = new Renderer::SceneData;
 	void Renderer::BeginScene(OrthographicCamera& camera)

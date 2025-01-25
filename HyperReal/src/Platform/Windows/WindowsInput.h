@@ -1,6 +1,6 @@
 #pragma once
 #include "hrpch.h"
-#include "core-files/input.h"
+#include "core-files/Core/input.h"
 
 namespace HyperR {
 	class HyperR_API WindowsInput : public Input {

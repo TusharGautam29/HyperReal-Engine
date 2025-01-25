@@ -1,5 +1,5 @@
 #pragma once
-#include "core-files/Window.h"
+#include "core-files/Core/Window.h"
 #include <GLFW/glfw3.h>
 #include "core-files/Renderer/GraphicsContext.h"
 namespace HyperR {

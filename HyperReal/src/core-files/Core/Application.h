@@ -1,13 +1,13 @@
 #pragma once
 #include "core.h"
-#include "Event/Event.h"
-#include "Event/ApplicationEvent.h"
+#include "core-files/Event/Event.h"
+#include "core-files/Event/ApplicationEvent.h"
 #include "Window.h"	
 #include "LayerStack.h"
 #include "core-files/ImGui/ImGuiLayer.h"
 
 
-#include "Core/Timestep.h"
+#include "Timestep.h"
 
 namespace HyperR
 {

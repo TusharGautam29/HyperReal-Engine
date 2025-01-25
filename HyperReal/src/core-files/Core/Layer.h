@@ -1,8 +1,8 @@
 #pragma once
 
 #include "core.h"
-#include "Event/Event.h"
-#include "Core/Timestep.h"
+#include "core-files/Event/Event.h"
+#include "core-files/Core/Timestep.h"
 
 namespace HyperR {
 	class HyperR_API Layer

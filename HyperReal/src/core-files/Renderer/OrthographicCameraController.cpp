@@ -1,8 +1,8 @@
 #include "hrpch.h"
 #include "OrthographicCameraController.h"
 
-#include "core-files/input.h"
-#include "core-files/Keycodes.h"
+#include "core-files/Core/input.h"
+#include "core-files/Core/Keycodes.h"
 
 namespace HyperR {
 

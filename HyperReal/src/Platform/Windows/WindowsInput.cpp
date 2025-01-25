@@ -1,6 +1,6 @@
 #include "hrpch.h"
 #include "WindowsInput.h"
-#include "core-files/Application.h"
+#include "core-files/Core/Application.h"
 #include <GLFW/glfw3.h>
 namespace HyperR{
 	

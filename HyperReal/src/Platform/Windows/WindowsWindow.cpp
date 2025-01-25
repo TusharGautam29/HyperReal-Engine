@@ -1,5 +1,5 @@
 #include "hrpch.h"
-#include "core-files/Platform/OpenGL/OpenGLContext.h"
+#include "Platform/OpenGL/OpenGLContext.h"
 #include "WindowsWindow.h"
 #include "core-files/Event/ApplicationEvent.h"
 #include "core-files/Event/MouseEvent.h"

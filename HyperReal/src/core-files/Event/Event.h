@@ -1,6 +1,6 @@
 #pragma once
 #include "hrpch.h"
-#include "C:\HyperReal\HyperReal\HyperReal\src\core-files\core.h"
+#include "core-files/Core/core.h"
 #include "spdlog/fmt/ostr.h"
 
 

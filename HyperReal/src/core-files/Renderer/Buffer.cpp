@@ -1,7 +1,7 @@
 #include "hrpch.h"
 #include "Buffer.h"
 #include "Renderer.h"
-#include "core-files/Platform/OpenGL/OpenGLBuffer.h"
+#include "Platform/OpenGL/OpenGLBuffer.h"
 namespace HyperR {
 	VertexBuffer* VertexBuffer::Create(float* vertices, uint32_t size)
 	{
