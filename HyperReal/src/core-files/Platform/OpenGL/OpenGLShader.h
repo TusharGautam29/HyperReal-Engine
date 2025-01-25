@@ -9,12 +9,14 @@ namespace HyperR {
 	class OpenGLShader : public Shader
 	{
 	public:
-		OpenGLShader(const std::string& vertexSrc, const std::string& fragmentSrc);
+		OpenGLShader(const std::string& name ,const std::string& vertexSrc, const std::string& fragmentSrc);
 		OpenGLShader(const std::string& filepath);
 		~OpenGLShader();
 
 		void Bind() const;
 		void Unbind() const;
+
+		std::string GetName() const override { return m_Name; }
 
 		void UploadUniformInt(const std::string& name, int value);
 
@@ -32,5 +34,6 @@ namespace HyperR {
 		void Compile(const std::unordered_map<GLenum, std::string>& shaderSources);
 	private:
 		unsigned int m_RendererID;
+		std::string m_Name;
 	};
 }

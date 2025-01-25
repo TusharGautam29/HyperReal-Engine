@@ -102,7 +102,7 @@ public:
 				color = v_Color;
 			}
 		)";
-		m_Shader.reset(HyperR::Shader::Create(vertexSrc, fragmentSrc));
+		m_Shader=(HyperR::Shader::Create("VertexPosColor",vertexSrc, fragmentSrc));
 
 		std::string flatColorShaderVertexSrc = R"(
 			#version 330 core
@@ -132,10 +132,11 @@ public:
 				color = vec4(u_Color, 1.0);
 			}
 		)";
-		m_FlatColorShader.reset(HyperR::Shader::Create(flatColorShaderVertexSrc, flatColorShaderFragmentSrc));
+		m_FlatColorShader=(HyperR::Shader::Create("FlatColor",flatColorShaderVertexSrc, flatColorShaderFragmentSrc));
 
 		
-		m_TextureShader.reset(HyperR::Shader::Create("assets/shaders/Texture.glsl"));
+		auto m_TextureShader=m_ShaderLibrary.Load("assets/shaders/Texture.glsl");
+
 		m_Texture = HyperR::Texture2D::Create("assets/textures/Checkerboard.png");
 		m_LogoTexture = HyperR::Texture2D::Create("assets/textures/sample.jpeg");
 		std::dynamic_pointer_cast<HyperR::OpenGLShader>(m_TextureShader)->Bind();
@@ -186,7 +187,7 @@ public:
 			}
 		}
 
-
+		auto m_TextureShader = m_ShaderLibrary.Get("Texture");
 		m_Texture->Bind();
 		HyperR::Renderer::Submit(m_TextureShader, m_SquareVA, glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
 		
@@ -207,12 +208,13 @@ public:
 	{
 	}
 	private:
+		HyperR::ShaderLibrary m_ShaderLibrary;
 		float m_CameraMoveSpeed = 5.0f, m_CameraRotationSpeed = 180.0f;
 		glm::vec3 m_CameraPosition;
 		float m_CameraRotation = 0.0f;
 		std::shared_ptr<HyperR::Shader> m_Shader;
 		std::shared_ptr<HyperR::VertexArray> m_VertexArray;
-		HyperR::Ref<HyperR::Shader> m_FlatColorShader, m_TextureShader;
+		HyperR::Ref<HyperR::Shader> m_FlatColorShader;
 
 		HyperR::Ref<HyperR::VertexArray> m_SquareVA;
 		HyperR::Ref<HyperR::Texture2D> m_Texture;
