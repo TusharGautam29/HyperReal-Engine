@@ -12,6 +12,7 @@ namespace HyperR {
 		
 		float GetRotation() const { return m_Rotation; };
 		void SetRotation(float rotation) { m_Rotation = rotation; RecalculateViewMatrix(); }
+		void SetProjection(float left, float right, float top, float bottom);
 		
 		const glm::mat4& GetProjectionMatrix() const { return m_ProjectionMatrix; }
 		const glm::mat4& GetViewMatrix() const { return m_ViewMatrix; }

@@ -143,6 +143,7 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\core-files\OrthographicCameraController.h" />
     <ClInclude Include="src\HyperReal.h" />
     <ClInclude Include="src\core-files\Application.h" />
     <ClInclude Include="src\core-files\Core\Timestep.h" />
@@ -597,6 +598,7 @@
     <ClInclude Include="thirdparty\stb_image\stb_image.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\core-files\OrthographicCameraController.cpp" />
     <ClCompile Include="src\core-files\Application.cpp" />
     <ClCompile Include="src\core-files\ImGui\ImGuiBuild.cpp" />
     <ClCompile Include="src\core-files\ImGui\ImGuiLayer.cpp" />

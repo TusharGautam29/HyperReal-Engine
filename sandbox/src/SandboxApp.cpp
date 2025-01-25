@@ -12,7 +12,7 @@ class ExampleLayer : public HyperR::Layer
 {
 public:
 	ExampleLayer()
-		: Layer("Example"),m_Camera(-1.6f, 1.6f, -0.9f, 0.9f), m_CameraPosition(0.0f)
+		: Layer("Example"),m_CameraController(1280.0f/720.0f)
 	{
 		m_VertexArray.reset(HyperR::VertexArray::Create());
 
@@ -145,32 +145,13 @@ public:
 	
 	void OnUpdate(HyperR::Timestep ts) override
 	{
-
-		if (HyperR::Input::IsKeyPressed(HR_KEY_LEFT))
-			m_CameraPosition.x -= m_CameraMoveSpeed * ts;
-
-		else if (HyperR::Input::IsKeyPressed(HR_KEY_RIGHT))
-			m_CameraPosition.x += m_CameraMoveSpeed * ts;
+		m_CameraController.OnUpdate(ts);
 		
-		if (HyperR::Input::IsKeyPressed(HR_KEY_UP))
-			m_CameraPosition.y += m_CameraMoveSpeed * ts;
-		
-		else if (HyperR::Input::IsKeyPressed(HR_KEY_DOWN))
-			m_CameraPosition.y -= m_CameraMoveSpeed * ts;
-		
-		if (HyperR::Input::IsKeyPressed(HR_KEY_A))
-			m_CameraRotation += m_CameraRotationSpeed * ts;
-		
-		if (HyperR::Input::IsKeyPressed(HR_KEY_D))
-			m_CameraRotation -= m_CameraRotationSpeed * ts;
-
 		HyperR::RenderCommand::SetClearColor({ 0.1f, 0.1f, 0.1f, 1 });
 		HyperR::RenderCommand::Clear();
 
-		m_Camera.SetPosition(m_CameraPosition);
-		m_Camera.SetRotation(m_CameraRotation);
-
-		HyperR::Renderer::BeginScene(m_Camera);
+		
+		HyperR::Renderer::BeginScene(m_CameraController.GetCamera());
 
 		glm::mat4 scale = glm::scale(glm::mat4(1.0f), glm::vec3(0.1f));
 
@@ -206,12 +187,12 @@ public:
 	}
 	void OnEvent(HyperR::Event& event) override
 	{
+		m_CameraController.OnEvent(event);
 	}
 	private:
+		HyperR::OrthographicCameraController m_CameraController;
+		
 		HyperR::ShaderLibrary m_ShaderLibrary;
-		float m_CameraMoveSpeed = 5.0f, m_CameraRotationSpeed = 180.0f;
-		glm::vec3 m_CameraPosition;
-		float m_CameraRotation = 0.0f;
 		std::shared_ptr<HyperR::Shader> m_Shader;
 		std::shared_ptr<HyperR::VertexArray> m_VertexArray;
 		HyperR::Ref<HyperR::Shader> m_FlatColorShader;
@@ -219,7 +200,6 @@ public:
 		HyperR::Ref<HyperR::VertexArray> m_SquareVA;
 		HyperR::Ref<HyperR::Texture2D> m_Texture;
 		HyperR::Ref<HyperR::Texture2D> m_LogoTexture;
-		HyperR::OrthographicCamera m_Camera;
 
 		glm::vec3 m_SquareColor = { 0.2f, 0.3f, 0.8f };
 };
