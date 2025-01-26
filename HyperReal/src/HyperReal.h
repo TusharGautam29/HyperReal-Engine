@@ -22,6 +22,3 @@
 #include "core-files/Renderer/VertexArray.h"
 #include "core-files/Renderer/OrthographicCamera.h"
 // -----------------------------------
-// ---Entry Point---------------------
-#include "core-files/Core/EntryPoint.h"
-// -----------------------------------

@@ -1,11 +1,15 @@
 #include <HyperReal.h>
 //#include "core-files/core.h"
+#include "core-files/Core/EntryPoint.h"
 #include "Platform/OpenGL/OpenGLShader.h"
 #include "imgui/imgui.h"
 
 #include <glm/gtc/matrix_transform.hpp>
 
 #include <glm/gtc/type_ptr.hpp>
+
+#include "Sandbox2D.h"
+
 
 
 class ExampleLayer : public HyperR::Layer
@@ -14,7 +18,7 @@ public:
 	ExampleLayer()
 		: Layer("Example"),m_CameraController(1280.0f/720.0f)
 	{
-		m_VertexArray.reset(HyperR::VertexArray::Create());
+		m_VertexArray = HyperR::VertexArray::Create() ;
 
 		float vertices[3 * 7] = {
 					-0.5f, -0.5f, 0.0f, 1.0f, 0.8f, 0.5f, 1.0f,
@@ -43,7 +47,7 @@ public:
 
 		m_VertexArray->SetIndexBuffer(indexBuffer);
 
-		m_SquareVA.reset(HyperR::VertexArray::Create());
+		m_SquareVA = HyperR::VertexArray::Create() ;
 
 		float squareVertices[5 * 4] = {
 			-0.5f, -0.5f, 0.0f, 0.0f, 0.0f,
@@ -102,7 +106,7 @@ public:
 				color = v_Color;
 			}
 		)";
-		m_Shader=(HyperR::Shader::Create("VertexPosColor",vertexSrc, fragmentSrc));
+		m_Shader = HyperR::Shader::Create("VertexPosColor",vertexSrc, fragmentSrc) ;
 
 		std::string flatColorShaderVertexSrc = R"(
 			#version 330 core
@@ -209,7 +213,9 @@ class sandbox : public HyperR::Application
 public:
 	sandbox()
 	{
-		PushLayer(new ExampleLayer());
+		//PushLayer(new ExampleLayer());
+		PushLayer(new Sandbox2D());
+		
 	}
 	~sandbox()
 	{
