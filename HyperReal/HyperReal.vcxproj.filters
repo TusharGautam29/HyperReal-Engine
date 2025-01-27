@@ -1413,6 +1413,7 @@
     <ClInclude Include="thirdparty\stb_image\stb_image.h">
       <Filter>thirdparty\stb_image</Filter>
     </ClInclude>
+    <ClInclude Include="src\core-files\Renderer\Renderer2D.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Platform\OpenGL\OpenGLBuffer.cpp">
@@ -1490,5 +1491,6 @@
     <ClCompile Include="thirdparty\stb_image\stb_image.cpp">
       <Filter>thirdparty\stb_image</Filter>
     </ClCompile>
+    <ClCompile Include="src\core-files\Renderer\Renderer2D.cpp" />
   </ItemGroup>
 </Project>

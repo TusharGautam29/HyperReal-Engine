@@ -15,6 +15,7 @@
 #include "core-files/Renderer/OrthographicCameraController.h"
 // ---Renderer------------------------
 #include "core-files/Renderer/Renderer.h"
+#include "core-files/Renderer/Renderer2D.h"
 #include "core-files/Renderer/RenderCommand.h"
 #include "core-files/Renderer/Buffer.h"
 #include "core-files/Renderer/Shader.h"
