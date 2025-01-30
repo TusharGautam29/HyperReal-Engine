@@ -13,6 +13,8 @@ public:
 private:
 	HyperR::OrthographicCameraController m_CameraController;
 
+	HyperR::Ref<HyperR::Texture2D> m_CheckerboardTexture;
+
 	// Temp
 	HyperR::Ref<HyperR::VertexArray> m_SquareVA;
 	HyperR::Ref<HyperR::Shader> m_FlatColorShader;
