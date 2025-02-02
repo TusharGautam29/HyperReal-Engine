@@ -1414,6 +1414,7 @@
       <Filter>thirdparty\stb_image</Filter>
     </ClInclude>
     <ClInclude Include="src\core-files\Renderer\Renderer2D.h" />
+    <ClInclude Include="src\core-files\Debug\Instrumentor.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Platform\OpenGL\OpenGLBuffer.cpp">

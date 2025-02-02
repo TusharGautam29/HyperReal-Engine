@@ -7,11 +7,19 @@ int main(int argc, char** argv)
 {
 	HyperR::Log::Init();
 	HR_CORE_WARN("Initialised Log");
-	int a = 10;
-	HR_INFO("Hello! {0}", a);
 	std::cout << "Welcome to HyperReal Engine!" << std::endl;
+	
+	HR_PROFILE_BEGIN_SESSION("Startup", "HyperRealProfile-Startup.json");
 	auto app = HyperR::CreateApplication();
+	HR_PROFILE_END_SESSION();
+
+	HR_PROFILE_BEGIN_SESSION("Runtime", "HyperRealProfile-Runtime.json");
 	app->Run();
+	HR_PROFILE_END_SESSION();
+
+	HR_PROFILE_BEGIN_SESSION("Shutdown", "HyperRealProfile-Shutdown.json");
 	delete app;
+	HR_PROFILE_END_SESSION();
+
 }
 #endif

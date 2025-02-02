@@ -1,4 +1,4 @@
-#pragma once
+	#pragma once
 
 #include <iostream>
 #include <memory>
@@ -14,6 +14,7 @@
 #include <unordered_set>
 
 #include "core-files/Core/log.h"
+#include "core-files/Debug/Instrumentor.h"
 
 #ifdef HR_PLATFORM_WINDOWS
 	#include <Windows.h>

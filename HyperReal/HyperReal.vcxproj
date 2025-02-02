@@ -143,6 +143,7 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\core-files\Debug\Instrumentor.h" />
     <ClInclude Include="src\core-files\Renderer\Renderer2D.h" />
     <ClInclude Include="src\HyperReal.h" />
     <ClInclude Include="src\Platform\OpenGL\OpenGLBuffer.h" />
