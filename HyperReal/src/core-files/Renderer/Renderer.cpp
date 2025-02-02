@@ -9,6 +9,10 @@ namespace HyperR {
 	{
 		m_SceneData->ViewProjectionMatrix = camera.GetViewProjectionMatrix();
 	}
+	void Renderer::Shutdown()
+	{
+		Renderer2D::Shutdown();
+	}
 	void Renderer::EndScene()
 	{
 	}
@@ -25,6 +29,8 @@ namespace HyperR {
 	}
 	void Renderer::Init()
 	{
+		HR_PROFILE_FUNCTION();
+
 		RenderCommand::Init();
 		Renderer2D::Init();
 		

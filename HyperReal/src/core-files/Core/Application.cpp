@@ -18,6 +18,8 @@ namespace HyperR
 
 	Application::Application()
 	{
+		HR_PROFILE_FUNCTION();
+
 		HR_CORE_ASSERT(!s_Instance, "Application already exists!");
 		s_Instance = this;
 
@@ -33,21 +35,29 @@ namespace HyperR
 	
 	Application::~Application()
 	{
+		HR_PROFILE_FUNCTION();
+		Renderer::Shutdown();
+
 	}
 	
 	void Application::PushLayer(Layer* layer)
 	{
+		HR_PROFILE_FUNCTION();
+
 		m_LayerStack.PushLayer(layer);
 		layer->OnAttach();
 	}
 	void Application::PushOverlay(Layer* layer)
 	{
+		HR_PROFILE_FUNCTION();
 		m_LayerStack.PushOverlay(layer);
 		layer->OnAttach();
 	}
 	
 	void Application::OnEvent(Event& e)
 	{
+		HR_PROFILE_FUNCTION();
+
 		EventDispatcher dispatcher(e);
 		dispatcher.Dispatch<WindowCloseEvent>(BIND_EVENT_FN(OnWindowClose));
 		dispatcher.Dispatch<WindowResizeEvent>(BIND_EVENT_FN(OnWindowResize));
@@ -60,23 +70,29 @@ namespace HyperR
 	}
 	void Application::Run()
 	{
+		HR_PROFILE_FUNCTION();
+
 		while (m_Running)
 		{
+			HR_PROFILE_SCOPE("RunLoop");
 			float time = (float)glfwGetTime();
 			Timestep timestep = time - m_LastFrameTime;
 			m_LastFrameTime = time;
 
 			if (!m_Minimized)
 			{
+				HR_PROFILE_SCOPE("LayerStack OnUpdate");
 				for (Layer* layer : m_LayerStack)
 					layer->OnUpdate(timestep);
-			}
 			
-			m_ImGuiLayer->Begin();
-			for (Layer* layer : m_LayerStack)
-				layer->OnImGuiRender();
-			m_ImGuiLayer->End();
-
+				m_ImGuiLayer->Begin();
+				{
+					HR_PROFILE_SCOPE("LayerStack OnImGuiRender");
+					for (Layer* layer : m_LayerStack)
+						layer->OnImGuiRender();
+				}
+				m_ImGuiLayer->End();
+			}
 			m_Window->OnUpdate();
 		}
 	}
@@ -89,6 +105,8 @@ namespace HyperR
 	
 	bool Application::OnWindowResize(WindowResizeEvent& e)
 	{
+		HR_PROFILE_FUNCTION();
+
 		if (e.GetWidth() == 0 || e.GetHeight() == 0)
 		{
 			m_Minimized = true;

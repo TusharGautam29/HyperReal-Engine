@@ -19,27 +19,38 @@ namespace HyperR {
 	}
 	WindowsWindow::WindowsWindow(const WindowProps& props)
 	{
+		HR_PROFILE_FUNCTION();
+
 		Init(props);
 	}
 	WindowsWindow::~WindowsWindow()
 	{
+		HR_PROFILE_FUNCTION();
+
 		Shutdown();
 	}
 	void WindowsWindow::Init(const WindowProps& props)
 	{
+		HR_PROFILE_FUNCTION();
+
 		m_Data.Title = props.Title;
 		m_Data.Width = props.Width;
 		m_Data.Height = props.Height;
 		HR_CORE_INFO("Creating window {0} ({1}, {2})", props.Title, props.Width, props.Height);
 		if (!s_GLFWInitialized)
 		{
+			HR_PROFILE_SCOPE("glfwInit");
 			// TODO: glfwTerminate on system shutdown
 			int success = glfwInit();
 			HR_CORE_ASSERT(success, "Could not intialize GLFW!");
 			glfwSetErrorCallback(GLFWErrorCallback);
 			s_GLFWInitialized = true;
 		}
-		m_Window = glfwCreateWindow((int)props.Width, (int)props.Height, m_Data.Title.c_str(), nullptr, nullptr);
+		{
+			HR_PROFILE_SCOPE("glfwCreateWindow");
+			m_Window = glfwCreateWindow((int)props.Width, (int)props.Height, m_Data.Title.c_str(), nullptr, nullptr);
+			//++s_GLFWWindowCount;
+		}
 		m_Context = new OpenGLContext(m_Window);
 		m_Context->Init();
 
@@ -139,15 +150,21 @@ namespace HyperR {
 	}
 	void WindowsWindow::Shutdown()
 	{
+		HR_PROFILE_FUNCTION();
+
 		glfwDestroyWindow(m_Window);
 	}
 	void WindowsWindow::OnUpdate()
 	{
+		HR_PROFILE_FUNCTION();
+
 		glfwPollEvents();
 		m_Context->SwapBuffers();
 	}
 	void WindowsWindow::SetVSync(bool enabled)
 	{
+		HR_PROFILE_FUNCTION();
+
 		if (enabled)
 			glfwSwapInterval(1);
 		else

@@ -20,6 +20,7 @@ namespace HyperR {
 	}
 	void ImGuiLayer::OnAttach()
 	{
+		HR_PROFILE_FUNCTION();
 		if (!s_ImGuiInitialized) {
 			IMGUI_CHECKVERSION();
 			ImGui::CreateContext();
@@ -59,12 +60,15 @@ namespace HyperR {
 	}
 	void ImGuiLayer::OnDetach()
 	{
+		HR_PROFILE_FUNCTION();
 		ImGui_ImplOpenGL3_Shutdown();
 		ImGui_ImplGlfw_Shutdown();
 		ImGui::DestroyContext();
 	}
 	void ImGuiLayer::Begin()
 	{
+		HR_PROFILE_FUNCTION();
+
 		ImGui_ImplOpenGL3_NewFrame();
 		ImGui_ImplGlfw_NewFrame();
 		//std::cout << "ImGui::NewFrame() called" << std::endl;
@@ -73,6 +77,8 @@ namespace HyperR {
 	}
 	void ImGuiLayer::End()
 	{
+		HR_PROFILE_FUNCTION();
+
 		ImGuiIO& io = ImGui::GetIO();
 		Application& app = Application::Get();
 

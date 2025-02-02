@@ -15,20 +15,19 @@ Sandbox2D::Sandbox2D()
 
 void Sandbox2D::OnAttach(){
 	
+	HR_PROFILE_FUNCTION();
+
 	m_CheckerboardTexture = HyperR::Texture2D::Create("assets/textures/Checkerboard.png");
 
 }
 void Sandbox2D::OnDetach() {
+	HR_PROFILE_FUNCTION();
 
 }
 void Sandbox2D::OnUpdate(HyperR::Timestep ts) {
 
 	HR_PROFILE_SCOPE("Sandbox2D::OnUpdate");
-	// Update
-	{
-		HR_PROFILE_SCOPE("CameraController::OnUpdate");
 		m_CameraController.OnUpdate(ts);
-	}
 
 	{
 		HR_PROFILE_SCOPE("Renderer Prep");
