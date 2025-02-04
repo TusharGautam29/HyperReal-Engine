@@ -3,6 +3,7 @@
 
 #include "Sandbox2D.h"
 #include "ExampleLayer.h"
+#include "GameLayer.h"
 
 
 
@@ -13,6 +14,7 @@ public:
 	{
 		//PushLayer(new ExampleLayer());
 		PushLayer(new Sandbox2D());
+		PushLayer(new GameLayer());
 		
 	}
 	~sandbox()
