@@ -103,7 +103,7 @@ namespace HyperR {
 		bool m_Stopped;
 	};
 }
-#define HR_PROFILE 1
+#define HR_PROFILE 0
 #if HR_PROFILE
 #define HR_PROFILE_BEGIN_SESSION(name, filepath) ::HyperR::Instrumentor::Get().BeginSession(name, filepath)
 #define HR_PROFILE_END_SESSION() ::HyperR::Instrumentor::Get().EndSession()
