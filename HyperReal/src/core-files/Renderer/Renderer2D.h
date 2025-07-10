@@ -8,6 +8,7 @@ namespace HyperR {
 	public:
 		static void Init();	
 		static void Shutdown();
+		static void Flush();
 
 		static void BeginScene(const OrthographicCamera& camera);
 		static void EndScene();

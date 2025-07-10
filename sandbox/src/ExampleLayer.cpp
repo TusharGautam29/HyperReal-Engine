@@ -30,9 +30,7 @@ ExampleLayer::ExampleLayer()
 
 		uint32_t indices[3] = { 0, 1, 2 };
 
-		HyperR::Ref<HyperR::IndexBuffer> indexBuffer;
-
-		indexBuffer.reset(HyperR::IndexBuffer::Create(indices, sizeof(indices) / sizeof(uint32_t)));
+		HyperR::Ref<HyperR::IndexBuffer> indexBuffer = HyperR::IndexBuffer::Create(indices, sizeof(indices) / sizeof(uint32_t));
 
 		m_VertexArray->SetIndexBuffer(indexBuffer);
 
@@ -57,9 +55,7 @@ ExampleLayer::ExampleLayer()
 
 		uint32_t squareIndices[6] = { 0, 1, 2, 2, 3, 0 };
 
-		std::shared_ptr<HyperR::IndexBuffer> squareIB;
-
-		squareIB.reset(HyperR::IndexBuffer::Create(squareIndices, sizeof(squareIndices) / sizeof(uint32_t)));
+		std::shared_ptr<HyperR::IndexBuffer> squareIB = HyperR::IndexBuffer::Create(squareIndices, sizeof(squareIndices) / sizeof(uint32_t));
 
 		m_SquareVA->SetIndexBuffer(squareIB);
 
