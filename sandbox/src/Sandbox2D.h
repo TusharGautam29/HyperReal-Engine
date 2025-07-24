@@ -12,6 +12,7 @@ public:
 	void OnEvent(HyperR::Event& e) override;
 private:
 	HyperR::OrthographicCameraController m_CameraController;
+	HyperR::PerspectiveCameraController m_PerspectiveCameraController;
 
 	HyperR::Ref<HyperR::Texture2D> m_CheckerboardTexture;
 

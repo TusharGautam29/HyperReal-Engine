@@ -84,7 +84,7 @@ namespace HyperR {
 
 	}
 
-	void Renderer2D::BeginScene(const OrthographicCamera& camera)
+	void Renderer2D::BeginScene(const PerspectiveCamera& camera)
 	{
 		HR_PROFILE_FUNCTION();
 

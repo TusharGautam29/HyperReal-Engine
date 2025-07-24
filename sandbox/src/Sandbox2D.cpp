@@ -9,7 +9,7 @@
 
 
 Sandbox2D::Sandbox2D()
-	: Layer("Sandbox2D"), m_CameraController(1280.0f / 720.0f) 
+	: Layer("Sandbox2D"), m_CameraController(1280.0f / 720.0f),m_PerspectiveCameraController(45.0f, 1280.0f / 720.0f, 0.1f, 100.0f)
 {
 }
 
@@ -27,7 +27,7 @@ void Sandbox2D::OnDetach() {
 void Sandbox2D::OnUpdate(HyperR::Timestep ts) {
 
 	HR_PROFILE_SCOPE("Sandbox2D::OnUpdate");
-		m_CameraController.OnUpdate(ts);
+		m_PerspectiveCameraController.OnUpdate(ts);
 
 	{
 		HR_PROFILE_SCOPE("Renderer Prep");
@@ -36,10 +36,11 @@ void Sandbox2D::OnUpdate(HyperR::Timestep ts) {
 	}
 	{
 		HR_PROFILE_SCOPE("Renderer Draw");
-		HyperR::Renderer2D::BeginScene(m_CameraController.GetCamera());
-		HyperR::Renderer2D::DrawQuad({ -1.0f, 0.0f }, { 0.8f, 0.8f }, m_SquareColor);
-		HyperR::Renderer2D::DrawQuad({ 0.5f, -0.5f }, { 0.5f, 0.75f }, { 0.2f, 0.3f, 0.8f, 1.0f });
-		HyperR::Renderer2D::DrawQuad({ 0.0f, 0.0f, -0.1f }, { 10.0f, 10.0f }, m_CheckerboardTexture);
+		HyperR::Renderer2D::BeginScene(m_PerspectiveCameraController.GetCamera());
+		HyperR::Renderer2D::DrawQuad({ -1.0f, 0.0f, -2.0f }, { 0.8f, 0.8f }, m_SquareColor);
+		HyperR::Renderer2D::DrawQuad({ 0.5f, -0.5f, -4.0f }, { 0.5f, 0.75f }, { 0.2f, 0.3f, 0.8f, 1.0f });
+
+		//HyperR::Renderer2D::DrawQuad({ 0.0f, 0.0f, -0.1f }, { 10.0f, 10.0f }, m_CheckerboardTexture);
 		HyperR::Renderer2D::EndScene();
 	}
 }

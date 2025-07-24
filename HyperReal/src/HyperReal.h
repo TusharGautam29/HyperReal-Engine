@@ -13,6 +13,7 @@
 
 #include "core-files/ImGui/ImGuiLayer.h"
 #include "core-files/Renderer/OrthographicCameraController.h"
+#include "core-files/Renderer/PerspectiveCameraController.h"
 // ---Renderer------------------------
 #include "core-files/Renderer/Renderer.h"
 #include "core-files/Renderer/Renderer2D.h"
