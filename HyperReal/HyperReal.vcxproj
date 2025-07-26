@@ -143,7 +143,9 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="OpenGLMesh.h" />
     <ClInclude Include="src\core-files\Debug\Instrumentor.h" />
+    <ClInclude Include="src\core-files\Renderer\Mesh.h" />
     <ClInclude Include="src\core-files\Renderer\PerspectiveCamera.h" />
     <ClInclude Include="src\core-files\Renderer\PerspectiveCameraController.h" />
     <ClInclude Include="src\core-files\Renderer\Renderer2D.h" />
@@ -602,6 +604,7 @@
     <ClInclude Include="thirdparty\stb_image\stb_image.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="OpenGLMesh.cpp" />
     <ClCompile Include="src\core-files\Renderer\PerspectiveCamera.cpp" />
     <ClCompile Include="src\core-files\Renderer\PerspectiveCameraController.cpp" />
     <ClCompile Include="src\core-files\Renderer\Renderer2D.cpp" />

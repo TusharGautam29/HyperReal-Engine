@@ -1423,6 +1423,12 @@
     <ClInclude Include="src\core-files\Renderer\PerspectiveCameraController.h">
       <Filter>src\core-files\Renderer</Filter>
     </ClInclude>
+    <ClInclude Include="src\core-files\Renderer\Mesh.h">
+      <Filter>src\core-files\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="OpenGLMesh.h">
+      <Filter>src\Platform\OpenGL</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Platform\OpenGL\OpenGLBuffer.cpp">
@@ -1508,6 +1514,9 @@
     </ClCompile>
     <ClCompile Include="src\core-files\Renderer\PerspectiveCameraController.cpp">
       <Filter>src\core-files\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="OpenGLMesh.cpp">
+      <Filter>src\Platform\OpenGL</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
