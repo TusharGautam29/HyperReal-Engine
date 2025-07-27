@@ -1426,8 +1426,14 @@
     <ClInclude Include="src\core-files\Renderer\Mesh.h">
       <Filter>src\core-files\Renderer</Filter>
     </ClInclude>
-    <ClInclude Include="OpenGLMesh.h">
+    <ClInclude Include="src\Platform\OpenGL\OpenGLMesh.h">
       <Filter>src\Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="src\core-files\Renderer\Renderer3D.h">
+      <Filter>src\core-files\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="Vertex.h">
+      <Filter>src\core-files\Renderer</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -1515,8 +1521,14 @@
     <ClCompile Include="src\core-files\Renderer\PerspectiveCameraController.cpp">
       <Filter>src\core-files\Renderer</Filter>
     </ClCompile>
-    <ClCompile Include="OpenGLMesh.cpp">
+    <ClCompile Include="src\Platform\OpenGL\OpenGLMesh.cpp">
       <Filter>src\Platform\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core-files\Renderer\Renderer3D.cpp">
+      <Filter>src\core-files\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core-files\Renderer\Mesh.cpp">
+      <Filter>src\core-files\Renderer</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

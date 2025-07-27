@@ -17,10 +17,13 @@
 // ---Renderer------------------------
 #include "core-files/Renderer/Renderer.h"
 #include "core-files/Renderer/Renderer2D.h"
+#include "core-files/Renderer/Renderer3D.h"
+
 #include "core-files/Renderer/RenderCommand.h"
 #include "core-files/Renderer/Buffer.h"
 #include "core-files/Renderer/Shader.h"
 #include "core-files/Renderer/Texture.h"
+#include "core-files/Renderer/Mesh.h"
 #include "core-files/Renderer/VertexArray.h"
 #include "core-files/Renderer/OrthographicCamera.h"
 // -----------------------------------

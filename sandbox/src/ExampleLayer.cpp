@@ -17,7 +17,7 @@ ExampleLayer::ExampleLayer()
 
 		HyperR::Ref<HyperR::VertexBuffer> vertexBuffer;
 
-		vertexBuffer.reset(HyperR::VertexBuffer::Create(vertices, sizeof(vertices)));
+		vertexBuffer= HyperR::VertexBuffer::Create(vertices, sizeof(vertices));
 
 		HyperR::BufferLayout layout = {
 			{ HyperR::ShaderDataType::Float3, "a_Position" },
@@ -44,7 +44,7 @@ ExampleLayer::ExampleLayer()
 		};
 		HyperR::Ref<HyperR::VertexBuffer> squareVB;
 
-		squareVB.reset(HyperR::VertexBuffer::Create(squareVertices, sizeof(squareVertices)));
+		squareVB= HyperR::VertexBuffer::Create(squareVertices, sizeof(squareVertices));
 
 		squareVB->SetLayout({
 			{ HyperR::ShaderDataType::Float3, "a_Position" },

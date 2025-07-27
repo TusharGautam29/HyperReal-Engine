@@ -3,8 +3,8 @@
 
 namespace HyperR {
 
-	OpenGLMesh::OpenGLMesh(const std::vector<Vertex>& vertices, const std::vector<uint32_t>& indices)
-		: m_Vertices(vertices), m_Indices(indices)
+	OpenGLMesh::OpenGLMesh(const std::vector<Vertex>& vertices, const std::vector<uint32_t>& indices, const Ref<Shader>& shader)
+		: m_Vertices(vertices), m_Indices(indices), m_Shader(shader)
 	{
 		SetupMesh();
 	}
@@ -13,7 +13,8 @@ namespace HyperR {
 	{
 		m_VertexArray = VertexArray::Create();
 
-		m_VertexBuffer = CreateRef<VertexBuffer>((float*)m_Vertices.data(), m_Vertices.size() * sizeof(Vertex));
+		m_VertexBuffer = VertexBuffer::Create((float*)m_Vertices.data(), m_Vertices.size() * sizeof(Vertex));
+
 
 		m_VertexBuffer->SetLayout({
 			{ ShaderDataType::Float3, "a_Position" },
@@ -35,6 +36,12 @@ namespace HyperR {
 	{
 		m_VertexArray->Unbind();
 	}
-
+	void OpenGLMesh::Draw() const {
+		m_VertexArray->Bind();
+		RenderCommand::DrawIndexed(m_VertexArray);
+	}
+	const Ref<Shader>& OpenGLMesh::GetShader() const {
+		return m_Shader;
+	}
 }
 

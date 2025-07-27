@@ -3,6 +3,7 @@
 
 #include "Sandbox2D.h"
 #include "ExampleLayer.h"
+#include "Sandbox3D.h"
 
 
 
@@ -12,7 +13,8 @@ public:
 	sandbox()
 	{
 		//PushLayer(new ExampleLayer());
-		PushLayer(new Sandbox2D());
+		//PushLayer(new Sandbox2D());
+		PushLayer(new Sandbox3D());
 		
 	}
 	~sandbox()

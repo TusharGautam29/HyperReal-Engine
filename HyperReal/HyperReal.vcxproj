@@ -143,15 +143,16 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="OpenGLMesh.h" />
     <ClInclude Include="src\core-files\Debug\Instrumentor.h" />
     <ClInclude Include="src\core-files\Renderer\Mesh.h" />
     <ClInclude Include="src\core-files\Renderer\PerspectiveCamera.h" />
     <ClInclude Include="src\core-files\Renderer\PerspectiveCameraController.h" />
     <ClInclude Include="src\core-files\Renderer\Renderer2D.h" />
+    <ClInclude Include="src\core-files\Renderer\Renderer3D.h" />
     <ClInclude Include="src\HyperReal.h" />
     <ClInclude Include="src\Platform\OpenGL\OpenGLBuffer.h" />
     <ClInclude Include="src\Platform\OpenGL\OpenGLContext.h" />
+    <ClInclude Include="src\Platform\OpenGL\OpenGLMesh.h" />
     <ClInclude Include="src\Platform\OpenGL\OpenGLRendererAPI.h" />
     <ClInclude Include="src\Platform\OpenGL\OpenGLShader.h" />
     <ClInclude Include="src\Platform\OpenGL\OpenGLTexture.h" />
@@ -602,14 +603,17 @@
     <ClInclude Include="thirdparty\glm\glm\vec4.hpp" />
     <ClInclude Include="thirdparty\glm\glm\vector_relational.hpp" />
     <ClInclude Include="thirdparty\stb_image\stb_image.h" />
+    <ClInclude Include="Vertex.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="OpenGLMesh.cpp" />
+    <ClCompile Include="src\core-files\Renderer\Mesh.cpp" />
     <ClCompile Include="src\core-files\Renderer\PerspectiveCamera.cpp" />
     <ClCompile Include="src\core-files\Renderer\PerspectiveCameraController.cpp" />
     <ClCompile Include="src\core-files\Renderer\Renderer2D.cpp" />
+    <ClCompile Include="src\core-files\Renderer\Renderer3D.cpp" />
     <ClCompile Include="src\Platform\OpenGL\OpenGLBuffer.cpp" />
     <ClCompile Include="src\Platform\OpenGL\OpenGLContext.cpp" />
+    <ClCompile Include="src\Platform\OpenGL\OpenGLMesh.cpp" />
     <ClCompile Include="src\Platform\OpenGL\OpenGLRendererAPI.cpp" />
     <ClCompile Include="src\Platform\OpenGL\OpenGLShader.cpp" />
     <ClCompile Include="src\Platform\OpenGL\OpenGLTexture.cpp" />
