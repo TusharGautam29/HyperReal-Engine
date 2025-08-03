@@ -6,6 +6,8 @@ namespace HyperR {
 	OpenGLMesh::OpenGLMesh(const std::vector<Vertex>& vertices, const std::vector<uint32_t>& indices, const Ref<Shader>& shader)
 		: m_Vertices(vertices), m_Indices(indices), m_Shader(shader)
 	{
+		HR_CORE_INFO("Creating Mesh with {0} vertices, {1} indices", vertices.size(), indices.size());
+
 		SetupMesh();
 	}
 

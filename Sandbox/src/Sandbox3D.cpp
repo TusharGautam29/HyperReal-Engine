@@ -6,6 +6,7 @@
 #include "core-files/Renderer/Shader.h"
 #include "Platform/OpenGL/OpenGLShader.h"
 #include "core-files/Renderer/Vertex.h"
+#include "core-files/Renderer/Renderer2D.h"
 
 
 
@@ -17,28 +18,21 @@ Sandbox3D::Sandbox3D()
 void Sandbox3D::OnAttach() {
 	HR_PROFILE_FUNCTION();
 
-	std::vector<HyperR::Vertex> cubeVertices = {
-		{{-0.5f, -0.5f, -0.5f}, {0.0f, 0.0f}},
-		{{ 0.5f, -0.5f, -0.5f}, {0.0f, 0.0f}},
-		{{ 0.5f,  0.5f, -0.5f}, {0.0f, 0.0f}},
-		{{-0.5f,  0.5f, -0.5f}, {0.0f, 0.0f}},
-		{{-0.5f, -0.5f,  0.5f}, {0.0f, 0.0f}},
-		{{ 0.5f, -0.5f,  0.5f}, {0.0f, 0.0f}},
-		{{ 0.5f,  0.5f,  0.5f}, {0.0f, 0.0f}},
-		{{-0.5f,  0.5f,  0.5f}, {0.0f, 0.0f}},
+	std::vector<HyperR::Vertex> quadVertices = {
+	{{-0.5f, -0.5f, 0.0f}, {0.0f, 0.0f}}, // Bottom-left
+	{{ 0.5f, -0.5f, 0.0f}, {1.0f, 0.0f}}, // Bottom-right
+	{{ 0.5f,  0.5f, 0.0f}, {1.0f, 1.0f}}, // Top-right
+	{{-0.5f,  0.5f, 0.0f}, {0.0f, 1.0f}}, // Top-left
 	};
 
-	std::vector<uint32_t> cubeIndices = {
-		0, 1, 2, 2, 3, 0,
-		4, 5, 6, 6, 7, 4,
-		4, 5, 1, 1, 0, 4,
-		6, 7, 3, 3, 2, 6,
-		4, 7, 3, 3, 0, 4,
-		5, 6, 2, 2, 1, 5
+	std::vector<uint32_t> quadIndices = {
+		0, 1, 2,
+		2, 3, 0
 	};
 
 	m_Shader = HyperR::Shader::Create("assets/shaders/FlatColor.glsl");
-	m_CubeMesh = HyperR::Mesh::Create(cubeVertices, cubeIndices, m_Shader);
+	m_CubeMesh = HyperR::Mesh::Create(quadVertices, quadIndices, m_Shader);
+
 }
 
 void Sandbox3D::OnDetach() {
@@ -51,16 +45,14 @@ void Sandbox3D::OnUpdate(HyperR::Timestep ts) {
 
 	{
 		HR_PROFILE_SCOPE("Renderer Prep");
-		HyperR::RenderCommand::SetClearColor({ 0.1f, 0.1f, 0.1f, 1 });
+		HyperR::RenderCommand::SetClearColor({ 0.1f, 0.1f, 0.5f, 1.0f });
+
 		HyperR::RenderCommand::Clear();
 	}
 	{
 		HR_PROFILE_SCOPE("Renderer Draw");
 		HyperR::Renderer3D::BeginScene(m_PerspectiveCameraController.GetCamera());
-
-		glm::mat4 transform = glm::mat4(1.0f);
-		HyperR::Renderer3D::Submit(m_CubeMesh, transform);
-
+		HyperR::Renderer3D::DrawCube({ 0.0f, 0.0f, 0.0f }, { 1.0f, 1.0f, 1.0f }, { 1.0f, 0.0f, 0.0f, 1.0f });
 		HyperR::Renderer3D::EndScene();
 	}
 }

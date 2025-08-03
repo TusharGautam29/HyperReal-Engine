@@ -2,6 +2,8 @@
 #version 330 core
 
 layout(location = 0) in vec3 a_Position;
+layout(location = 1) in vec2 a_TextCoord;
+
 
 uniform mat4 u_ViewProjection;
 uniform mat4 u_Transform;
@@ -20,5 +22,5 @@ uniform vec4 u_Color;
 
 void main()
 {
-	color = u_Color;
+	color = vec4(1.0, 0.3, 0.2, 1.0);
 }
